@@ -3,176 +3,284 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Премиум Frontend Портфолио</title>
-    <meta name="description" content="Подборка из пяти отполированных frontend-проектов для портфолио.">
+    <title>Swatik11 — портфолио Андрея</title>
+    <meta name="description" content="Портфолио Андрея, username Swatik11: пять рабочих frontend-проектов, черный premium UI, плавные действия и GitHub Pages.">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
+    <div class="black-grid" aria-hidden="true"></div>
+
     <header class="site-header">
-      <a class="brand" href="./index.html" aria-label="Главная портфолио">
-        <span class="brand-mark">PF</span>
+      <a class="brand magnetic" href="#home" aria-label="Наверх">
+        <span class="brand-mark">S11</span>
         <span>
-          <strong>Премиум Frontend</strong>
-          <small>5 рабочих проектов</small>
+          <strong>Swatik11</strong>
+          <small>Андрей / frontend portfolio</small>
         </span>
       </a>
-      <nav class="top-nav" aria-label="Навигация портфолио">
-        <a href="#projects">Проекты</a>
-        <a href="#stack">Стек</a>
-        <a href="#quality">Качество</a>
+
+      <nav class="top-nav" aria-label="Навигация">
+        <a href="#works">Работы</a>
+        <a href="#system">Система</a>
+        <a href="#about">Профиль</a>
+        <a href="#contacts">Контакты</a>
       </nav>
+
+      <button class="icon-button magnetic" id="themeToggle" type="button" aria-label="Сменить акцент" title="Сменить акцент">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/>
+          <circle cx="12" cy="12" r="4"/>
+        </svg>
+      </button>
     </header>
 
-    <main>
+    <main id="home">
       <section class="hero">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">Система портфолио</p>
-          <h1>Пять frontend-проектов уровня продукта с живым интерфейсом и продуманным дизайном.</h1>
-          <p class="hero-text">Каждый проект открывается как отдельное приложение: дашборды, продуктовые сценарии, фильтры, состояния, адаптивная верстка и аккуратная анимация для сильного впечатления.</p>
-          <div class="hero-actions" aria-label="Основные действия">
-            <a class="button primary" href="#projects">Смотреть проекты</a>
-            <a class="button ghost" href="./README.md">Открыть README</a>
+        <div class="hero-copy">
+          <p class="kicker"><span>01</span> portfolio node / Swatik11</p>
+          <h1>Андрей / Swatik11 создает черные интерфейсы для рабочих продуктов.</h1>
+          <p class="hero-text">Пять готовых frontend-проектов: аналитика, планирование, каталог, travel-интерфейс и инструмент цвета. Открывай, нажимай, смотри поведение.</p>
+
+          <div class="hero-actions">
+            <a class="button primary magnetic" href="#works">Смотреть проекты</a>
+            <button class="button ghost magnetic" id="openContact" type="button">Контакт</button>
+          </div>
+
+          <div class="signal-row" aria-label="Краткая информация">
+            <div>
+              <span>username</span>
+              <strong>@Swatik11</strong>
+            </div>
+            <div>
+              <span>проекты</span>
+              <strong>5 рабочих</strong>
+            </div>
+            <div>
+              <span>визиты</span>
+              <strong id="visitorCount">1</strong>
+            </div>
           </div>
         </div>
-        <aside class="hero-panel reveal delay-1" aria-label="Сводка портфолио">
-          <div class="panel-topline">
-            <span>Готовность портфолио</span>
-            <strong>Готово</strong>
+
+        <div class="hero-console" aria-label="Визуальная панель портфолио">
+          <div class="console-top">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>swatik11.deck</strong>
           </div>
-          <div class="score-ring" aria-label="Оценка портфолио 96 процентов">
-            <span>96</span>
-            <small>оценка</small>
+
+          <div class="console-layout">
+            <div class="preview-window">
+              <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1100&q=80" alt="Темный экран с кодом как визуальный образ frontend-разработки">
+              <div class="scan-line" aria-hidden="true"></div>
+            </div>
+
+            <div class="status-stack">
+              <div class="status-chip active">
+                <span></span>
+                UI online
+              </div>
+              <div class="mini-metric">
+                <small>motion</small>
+                <strong>360ms</strong>
+              </div>
+              <div class="mini-metric">
+                <small>theme</small>
+                <strong>black</strong>
+              </div>
+            </div>
+
+            <div class="command-line">
+              <span>$</span>
+              <p>open portfolio --user Swatik11 --quality premium</p>
+            </div>
           </div>
-          <dl class="metrics">
-            <div>
-              <dt>Проекты</dt>
-              <dd>5</dd>
-            </div>
-            <div>
-              <dt>Страницы</dt>
-              <dd>18+</dd>
-            </div>
-            <div>
-              <dt>Сборка</dt>
-              <dd>Без npm</dd>
-            </div>
-          </dl>
-        </aside>
+        </div>
       </section>
 
-      <section class="section-block" id="projects">
+      <section class="project-strip" aria-label="Быстрые ссылки">
+        <a href="./projects/01-finance-command/index.html">Finance Command</a>
+        <a href="./projects/02-ai-sprint-planner/index.html">AI Sprint Planner</a>
+        <a href="./projects/03-atelier-commerce/index.html">Atelier Commerce</a>
+        <a href="./projects/04-nova-travel/index.html">Nova Travel</a>
+        <a href="./projects/05-chroma-studio/index.html">Chroma Studio</a>
+      </section>
+
+      <section class="section-block" id="works">
         <div class="section-heading">
-          <p class="eyebrow">Избранные работы</p>
-          <h2>Открой любой проект и сразу пользуйся.</h2>
+          <p class="kicker"><span>02</span> проекты</p>
+          <h2>Рабочая пятерка без муляжей.</h2>
+          <p>Каждая карточка открывает описание, а ссылка внутри ведет в полноценный проект.</p>
         </div>
-        <div class="project-grid">
-          <article class="project-card finance">
-            <div class="card-media">
-              <span class="media-label">SaaS-дашборд</span>
-              <div class="mini-chart">
-                <i style="height:48%"></i><i style="height:70%"></i><i style="height:58%"></i><i style="height:86%"></i><i style="height:74%"></i>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="card-title">
-                <h3>Финансовый центр</h3>
-                <span>01</span>
-              </div>
-              <p>Выручка, runway, прогнозы, риски и сценарные настройки для финансового кабинета руководителя.</p>
-              <a class="card-link" href="./projects/01-finance-command/index.html">Открыть проект</a>
-            </div>
+
+        <div class="work-grid" id="workGrid">
+          <article class="work-card" data-project="finance" tabindex="0">
+            <span class="work-index">01</span>
+            <h3>Финансовый центр</h3>
+            <p>SaaS-дашборд с KPI, графиком, таблицей операций и сценариями.</p>
+            <div class="work-tags"><span>дашборд</span><span>метрики</span><span>таблица</span></div>
+            <a href="./projects/01-finance-command/index.html">Открыть</a>
           </article>
 
-          <article class="project-card planner">
-            <div class="card-media">
-              <span class="media-label">AI-процесс</span>
-              <div class="kanban-preview"><i></i><i></i><i></i></div>
-            </div>
-            <div class="card-body">
-              <div class="card-title">
-                <h3>AI-планировщик спринта</h3>
-                <span>02</span>
-              </div>
-              <p>Разбор бэклога, загрузка спринта, генерация брифа и рабочие состояния для продуктовой команды.</p>
-              <a class="card-link" href="./projects/02-ai-sprint-planner/index.html">Открыть проект</a>
-            </div>
+          <article class="work-card" data-project="planner" tabindex="0">
+            <span class="work-index">02</span>
+            <h3>AI-планировщик</h3>
+            <p>Планирование спринта: backlog, capacity, риски и быстрый бриф.</p>
+            <div class="work-tags"><span>kanban</span><span>AI</span><span>workflow</span></div>
+            <a href="./projects/02-ai-sprint-planner/index.html">Открыть</a>
           </article>
 
-          <article class="project-card commerce">
-            <div class="card-media">
-              <span class="media-label">Магазин</span>
-              <div class="product-preview"><i></i><i></i></div>
-            </div>
-            <div class="card-body">
-              <div class="card-title">
-                <h3>Atelier Commerce</h3>
-                <span>03</span>
-              </div>
-              <p>Премиальный каталог с фильтрами, сортировкой, корзиной, пустыми состояниями и итогом заказа.</p>
-              <a class="card-link" href="./projects/03-atelier-commerce/index.html">Открыть проект</a>
-            </div>
+          <article class="work-card" data-project="commerce" tabindex="0">
+            <span class="work-index">03</span>
+            <h3>Atelier Commerce</h3>
+            <p>Каталог с фильтрами, сортировкой, корзиной и checkout-потоком.</p>
+            <div class="work-tags"><span>магазин</span><span>фильтры</span><span>корзина</span></div>
+            <a href="./projects/03-atelier-commerce/index.html">Открыть</a>
           </article>
 
-          <article class="project-card travel">
-            <div class="card-media">
-              <span class="media-label">План поездки</span>
-              <div class="route-preview"><i></i><i></i><i></i></div>
-            </div>
-            <div class="card-body">
-              <div class="card-title">
-                <h3>Nova Travel</h3>
-                <span>04</span>
-              </div>
-              <p>Сравнение направлений, дневной план, карта, бюджет и таймлайн маршрута.</p>
-              <a class="card-link" href="./projects/04-nova-travel/index.html">Открыть проект</a>
-            </div>
+          <article class="work-card" data-project="travel" tabindex="0">
+            <span class="work-index">04</span>
+            <h3>Nova Travel</h3>
+            <p>Интерфейс поездки с маршрутом, картой, бюджетом и таймлайном.</p>
+            <div class="work-tags"><span>travel</span><span>карта</span><span>план</span></div>
+            <a href="./projects/04-nova-travel/index.html">Открыть</a>
           </article>
 
-          <article class="project-card chroma">
-            <div class="card-media">
-              <span class="media-label">Креативный инструмент</span>
-              <div class="palette-preview"><i></i><i></i><i></i><i></i><i></i></div>
-            </div>
-            <div class="card-body">
-              <div class="card-title">
-                <h3>Chroma Studio</h3>
-                <span>05</span>
-              </div>
-              <p>Генератор палитр с сохранением наборов, проверкой контраста, копированием HEX и тонкими настройками.</p>
-              <a class="card-link" href="./projects/05-chroma-studio/index.html">Открыть проект</a>
-            </div>
+          <article class="work-card wide" data-project="chroma" tabindex="0">
+            <span class="work-index">05</span>
+            <h3>Chroma Studio</h3>
+            <p>Генератор палитр с проверкой контраста, сохранением наборов и копированием HEX.</p>
+            <div class="work-tags"><span>цвет</span><span>контраст</span><span>tool UI</span></div>
+            <a href="./projects/05-chroma-studio/index.html">Открыть</a>
           </article>
         </div>
       </section>
 
-      <section class="split-section" id="stack">
+      <section class="system-section" id="system">
+        <div class="section-heading">
+          <p class="kicker"><span>03</span> система</p>
+          <h2>Черный интерфейс с быстрым откликом.</h2>
+        </div>
+
+        <div class="system-grid">
+          <article>
+            <span>visual</span>
+            <h3>Преимущественно черный</h3>
+            <p>Глубокий фон, тонкие линии, аккуратные акценты и контрастный текст.</p>
+          </article>
+          <article>
+            <span>motion</span>
+            <h3>Плавные нажатия</h3>
+            <p>Кнопки и карточки реагируют на hover, press, focus и открытие модалок.</p>
+          </article>
+          <article>
+            <span>shipping</span>
+            <h3>Готово для GitHub</h3>
+            <p>Статический сайт работает локально и подходит для GitHub Pages.</p>
+          </article>
+        </div>
+
+        <div class="skill-list" id="skillList">
+          <button type="button" aria-expanded="false">
+            <span>Что внутри проектов?</span>
+            <strong>+</strong>
+          </button>
+          <div class="skill-detail">Формы, таблицы, фильтры, интерактивные панели, локальные состояния, модальные окна, аккуратные пустые и активные состояния.</div>
+
+          <button type="button" aria-expanded="false">
+            <span>Почему дизайн не похож на референс?</span>
+            <strong>+</strong>
+          </button>
+          <div class="skill-detail">Здесь другая композиция: консольный hero, быстрые ссылки, черная сетка, проектная доска и собственные UI-модули вместо копирования чужой структуры.</div>
+
+          <button type="button" aria-expanded="false">
+            <span>Что можно показать работодателю?</span>
+            <strong>+</strong>
+          </button>
+          <div class="skill-detail">Главную страницу, каждый из пяти проектов, репозиторий GitHub и опубликованную ссылку GitHub Pages.</div>
+        </div>
+      </section>
+
+      <section class="about-section" id="about">
         <div>
-          <p class="eyebrow">Реализация</p>
-          <h2>Статично, переносимо и готово для GitHub Pages.</h2>
+          <p class="kicker"><span>04</span> профиль</p>
+          <h2>Андрей, username Swatik11.</h2>
+          <p>Собираю интерфейсы, которые можно не только показать на скриншоте, но и открыть в браузере. Фокус: чистая структура, темная эстетика, быстрые сценарии и понятное поведение после каждого клика.</p>
+          <button class="button ghost magnetic" id="openAbout" type="button">Коротко о стиле</button>
         </div>
-        <ul class="feature-list">
-          <li>Семантический HTML, адаптивный CSS и чистый JavaScript.</li>
-          <li>Без установки npm, без сборки и без привязки к фреймворку.</li>
-          <li>Фокус с клавиатуры, поддержка reduced motion и аккуратные пустые состояния.</li>
-          <li>README подготовлены для презентации проектов на GitHub.</li>
-        </ul>
+        <div class="profile-panel" aria-label="Профиль Swatik11">
+          <div class="profile-line">
+            <span>name</span>
+            <strong>Андрей</strong>
+          </div>
+          <div class="profile-line">
+            <span>username</span>
+            <strong>Swatik11</strong>
+          </div>
+          <div class="profile-line">
+            <span>focus</span>
+            <strong>frontend / UI</strong>
+          </div>
+          <button type="button" id="copyNick">Скопировать @Swatik11</button>
+        </div>
       </section>
 
-      <section class="quality-strip" id="quality" aria-label="Чеклист качества">
-        <span>Адаптивно</span>
-        <span>Интерактивно</span>
-        <span>Доступный фокус</span>
-        <span>Премиум-анимация</span>
-        <span>Готово для GitHub</span>
+      <section class="contacts-section" id="contacts">
+        <div>
+          <p class="kicker"><span>05</span> контакты</p>
+          <h2>Готов к новым задачам.</h2>
+          <p>Можно отправлять ссылку на портфолио, показывать проекты и открывать репозиторий. Username для связи и подписи: Swatik11.</p>
+        </div>
+        <div class="contact-grid">
+          <button class="contact-tile" type="button" data-copy="@Swatik11">
+            <span>Username</span>
+            <strong>@Swatik11</strong>
+          </button>
+          <a class="contact-tile" href="https://github.com/laladr1108-creator/portfolio" target="_blank" rel="noreferrer">
+            <span>GitHub</span>
+            <strong>portfolio repository</strong>
+          </a>
+        </div>
       </section>
     </main>
 
     <footer class="footer">
-      <span>Премиум Frontend Портфолио</span>
-      <a href="#projects">К проектам</a>
+      <div>
+        <strong>Swatik11 / Андрей</strong>
+        <span>Черное frontend-портфолио</span>
+      </div>
+      <a href="#home">Наверх</a>
     </footer>
 
+    <div class="modal" id="projectModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close></div>
+      <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" type="button" data-close aria-label="Закрыть">×</button>
+        <p class="kicker"><span>case</span> детали</p>
+        <h2 id="modalTitle">Проект</h2>
+        <p id="modalText"></p>
+        <div class="modal-meta" id="modalMeta"></div>
+        <a class="button primary" id="modalLink" href="#">Открыть проект</a>
+      </section>
+    </div>
+
+    <div class="modal" id="contactModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close></div>
+      <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+        <button class="modal-close" type="button" data-close aria-label="Закрыть">×</button>
+        <p class="kicker"><span>msg</span> связь</p>
+        <h2 id="contactTitle">Связаться со Swatik11</h2>
+        <p>Скопируй username или открой GitHub. Позже сюда можно добавить Telegram, почту или форму.</p>
+        <div class="contact-actions">
+          <button class="button primary" type="button" data-copy="@Swatik11">Скопировать @Swatik11</button>
+          <a class="button ghost" href="https://github.com/laladr1108-creator/portfolio" target="_blank" rel="noreferrer">Открыть GitHub</a>
+        </div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="./script.js"></script>
   </body>
 </html>
