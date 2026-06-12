@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Финансовый центр</title>
+    <meta name="description" content="Интерактивный финансовый дашборд для портфолио.">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Финансовая навигация">
+        <a class="brand" href="../../index.html">
+          <span>FC</span>
+          <strong>Финансовый центр</strong>
+        </a>
+        <nav class="side-nav">
+          <a class="active" href="#overview">Обзор</a>
+          <a href="#scenario">Сценарий</a>
+          <a href="#activity">Операции</a>
+          <a href="../../index.html">Портфолио</a>
+        </nav>
+        <div class="advisor-card">
+          <small>AI-прогноз</small>
+          <strong id="advisorText">Runway улучшается, если найм остается ниже 4 ролей в квартал.</strong>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Дашборд руководителя</p>
+            <h1>Финансовый центр управления</h1>
+          </div>
+          <div class="top-actions">
+            <label class="search">
+              <span>Поиск</span>
+              <input id="transactionSearch" type="search" placeholder="Искать операции">
+            </label>
+            <button class="button dark" id="exportButton" type="button">Экспорт</button>
+          </div>
+        </header>
+
+        <section class="kpi-grid" id="overview" aria-label="Ключевые метрики">
+          <article class="kpi-card">
+            <span>ARR</span>
+            <strong id="arrValue">$2.84M</strong>
+            <small class="positive">+18.4% кв/кв</small>
+          </article>
+          <article class="kpi-card">
+            <span>Чистый burn</span>
+            <strong id="burnValue">$182K</strong>
+            <small class="neutral">-6.1% к плану</small>
+          </article>
+          <article class="kpi-card">
+            <span>Runway</span>
+            <strong id="runwayValue">18.6 мес</strong>
+            <small class="positive">+3.4 мес</small>
+          </article>
+          <article class="kpi-card">
+            <span>Валовая маржа</span>
+            <strong id="marginValue">78%</strong>
+            <small class="warning">-2 п.п. к цели</small>
+          </article>
+        </section>
+
+        <section class="dashboard-grid">
+          <article class="panel chart-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">Тренд</p>
+                <h2 id="chartTitle">Траектория выручки</h2>
+              </div>
+              <div class="segmented" role="tablist" aria-label="График метрик">
+                <button class="active" type="button" data-metric="revenue">Выручка</button>
+                <button type="button" data-metric="margin">Маржа</button>
+                <button type="button" data-metric="cash">Деньги</button>
+              </div>
+            </div>
+            <div class="chart-wrap">
+              <svg id="metricChart" viewBox="0 0 720 280" role="img" aria-label="График метрики"></svg>
+            </div>
+            <div class="chart-legend">
+              <span><i class="legend-dot primary"></i> Факт</span>
+              <span><i class="legend-dot secondary"></i> Прогноз</span>
+            </div>
+          </article>
+
+          <article class="panel scenario" id="scenario">
+            <div class="panel-heading compact">
+              <div>
+                <p class="eyebrow">Сценарий</p>
+                <h2>Симулятор плана</h2>
+              </div>
+              <span class="status-pill">Живо</span>
+            </div>
+            <label class="range-row">
+              <span>Цель роста <b id="growthLabel">18%</b></span>
+              <input id="growthInput" type="range" min="8" max="32" value="18">
+            </label>
+            <label class="range-row">
+              <span>Темп найма <b id="hiringLabel">4 роли</b></span>
+              <input id="hiringInput" type="range" min="0" max="10" value="4">
+            </label>
+            <div class="scenario-output">
+              <div>
+                <span>Прогноз runway</span>
+                <strong id="scenarioRunway">18.6 мес</strong>
+              </div>
+              <div>
+                <span>Деньги на конец года</span>
+                <strong id="scenarioCash">$1.94M</strong>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel activity" id="activity">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Операции</p>
+              <h2>Последние транзакции</h2>
+            </div>
+            <button class="button light" id="clearSearch" type="button">Очистить</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Поставщик</th>
+                  <th>Тип</th>
+                  <th>Ответственный</th>
+                  <th>Сумма</th>
+                  <th>Статус</th>
+                </tr>
+              </thead>
+              <tbody id="transactionBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">Экспорт подготовлен</div>
+    <script src="./app.js"></script>
+  </body>
+</html>

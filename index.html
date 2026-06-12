@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Премиум Frontend Портфолио</title>
+    <meta name="description" content="Подборка из пяти отполированных frontend-проектов для портфолио.">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Главная портфолио">
+        <span class="brand-mark">PF</span>
+        <span>
+          <strong>Премиум Frontend</strong>
+          <small>5 рабочих проектов</small>
+        </span>
+      </a>
+      <nav class="top-nav" aria-label="Навигация портфолио">
+        <a href="#projects">Проекты</a>
+        <a href="#stack">Стек</a>
+        <a href="#quality">Качество</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Система портфолио</p>
+          <h1>Пять frontend-проектов уровня продукта с живым интерфейсом и продуманным дизайном.</h1>
+          <p class="hero-text">Каждый проект открывается как отдельное приложение: дашборды, продуктовые сценарии, фильтры, состояния, адаптивная верстка и аккуратная анимация для сильного впечатления.</p>
+          <div class="hero-actions" aria-label="Основные действия">
+            <a class="button primary" href="#projects">Смотреть проекты</a>
+            <a class="button ghost" href="./README.md">Открыть README</a>
+          </div>
+        </div>
+        <aside class="hero-panel reveal delay-1" aria-label="Сводка портфолио">
+          <div class="panel-topline">
+            <span>Готовность портфолио</span>
+            <strong>Готово</strong>
+          </div>
+          <div class="score-ring" aria-label="Оценка портфолио 96 процентов">
+            <span>96</span>
+            <small>оценка</small>
+          </div>
+          <dl class="metrics">
+            <div>
+              <dt>Проекты</dt>
+              <dd>5</dd>
+            </div>
+            <div>
+              <dt>Страницы</dt>
+              <dd>18+</dd>
+            </div>
+            <div>
+              <dt>Сборка</dt>
+              <dd>Без npm</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="section-block" id="projects">
+        <div class="section-heading">
+          <p class="eyebrow">Избранные работы</p>
+          <h2>Открой любой проект и сразу пользуйся.</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card finance">
+            <div class="card-media">
+              <span class="media-label">SaaS-дашборд</span>
+              <div class="mini-chart">
+                <i style="height:48%"></i><i style="height:70%"></i><i style="height:58%"></i><i style="height:86%"></i><i style="height:74%"></i>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-title">
+                <h3>Финансовый центр</h3>
+                <span>01</span>
+              </div>
+              <p>Выручка, runway, прогнозы, риски и сценарные настройки для финансового кабинета руководителя.</p>
+              <a class="card-link" href="./projects/01-finance-command/index.html">Открыть проект</a>
+            </div>
+          </article>
+
+          <article class="project-card planner">
+            <div class="card-media">
+              <span class="media-label">AI-процесс</span>
+              <div class="kanban-preview"><i></i><i></i><i></i></div>
+            </div>
+            <div class="card-body">
+              <div class="card-title">
+                <h3>AI-планировщик спринта</h3>
+                <span>02</span>
+              </div>
+              <p>Разбор бэклога, загрузка спринта, генерация брифа и рабочие состояния для продуктовой команды.</p>
+              <a class="card-link" href="./projects/02-ai-sprint-planner/index.html">Открыть проект</a>
+            </div>
+          </article>
+
+          <article class="project-card commerce">
+            <div class="card-media">
+              <span class="media-label">Магазин</span>
+              <div class="product-preview"><i></i><i></i></div>
+            </div>
+            <div class="card-body">
+              <div class="card-title">
+                <h3>Atelier Commerce</h3>
+                <span>03</span>
+              </div>
+              <p>Премиальный каталог с фильтрами, сортировкой, корзиной, пустыми состояниями и итогом заказа.</p>
+              <a class="card-link" href="./projects/03-atelier-commerce/index.html">Открыть проект</a>
+            </div>
+          </article>
+
+          <article class="project-card travel">
+            <div class="card-media">
+              <span class="media-label">План поездки</span>
+              <div class="route-preview"><i></i><i></i><i></i></div>
+            </div>
+            <div class="card-body">
+              <div class="card-title">
+                <h3>Nova Travel</h3>
+                <span>04</span>
+              </div>
+              <p>Сравнение направлений, дневной план, карта, бюджет и таймлайн маршрута.</p>
+              <a class="card-link" href="./projects/04-nova-travel/index.html">Открыть проект</a>
+            </div>
+          </article>
+
+          <article class="project-card chroma">
+            <div class="card-media">
+              <span class="media-label">Креативный инструмент</span>
+              <div class="palette-preview"><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <div class="card-body">
+              <div class="card-title">
+                <h3>Chroma Studio</h3>
+                <span>05</span>
+              </div>
+              <p>Генератор палитр с сохранением наборов, проверкой контраста, копированием HEX и тонкими настройками.</p>
+              <a class="card-link" href="./projects/05-chroma-studio/index.html">Открыть проект</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="split-section" id="stack">
+        <div>
+          <p class="eyebrow">Реализация</p>
+          <h2>Статично, переносимо и готово для GitHub Pages.</h2>
+        </div>
+        <ul class="feature-list">
+          <li>Семантический HTML, адаптивный CSS и чистый JavaScript.</li>
+          <li>Без установки npm, без сборки и без привязки к фреймворку.</li>
+          <li>Фокус с клавиатуры, поддержка reduced motion и аккуратные пустые состояния.</li>
+          <li>README подготовлены для презентации проектов на GitHub.</li>
+        </ul>
+      </section>
+
+      <section class="quality-strip" id="quality" aria-label="Чеклист качества">
+        <span>Адаптивно</span>
+        <span>Интерактивно</span>
+        <span>Доступный фокус</span>
+        <span>Премиум-анимация</span>
+        <span>Готово для GitHub</span>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Премиум Frontend Портфолио</span>
+      <a href="#projects">К проектам</a>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chroma Studio</title>
+    <meta name="description" content="Интерактивная студия цветовых палитр для портфолио.">
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="studio-header">
+      <a class="brand" href="../../index.html">
+        <span>CS</span>
+        <strong>Chroma Studio</strong>
+      </a>
+      <div class="header-actions">
+        <button class="icon-button" id="shuffleButton" type="button" aria-label="Сгенерировать случайную палитру" title="Сгенерировать случайную палитру">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5M4 20l6.5-6.5M15 9l6-6M4 4l5 5M13.5 13.5 16 16h5v5"/></svg>
+        </button>
+        <a class="button ghost" href="../../index.html">Портфолио</a>
+      </div>
+    </header>
+
+    <main class="studio">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Креативный инструмент</p>
+          <h1>Генерируй, настраивай и проверяй премиальные цветовые палитры.</h1>
+          <p>Практичная дизайн-утилита: стабильные контролы, состояния копирования, сохраненные палитры и проверка контраста для реальной UI-работы.</p>
+        </div>
+        <div class="contrast-card" id="contrastCard">
+          <span>Контраст</span>
+          <strong id="contrastRatio">7.42</strong>
+          <small id="contrastLabel">AAA готово</small>
+        </div>
+      </section>
+
+      <section class="workbench">
+        <aside class="panel controls-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Настройки</p>
+              <h2>Рецепт палитры</h2>
+            </div>
+          </div>
+          <label class="range-row">
+            <span>Базовый оттенок <b id="hueLabel">172</b></span>
+            <input id="hueInput" type="range" min="0" max="360" value="172">
+          </label>
+          <label class="range-row">
+            <span>Интенсивность <b id="intensityLabel">72%</b></span>
+            <input id="intensityInput" type="range" min="38" max="92" value="72">
+          </label>
+          <label>
+            Гармония
+            <select id="modeSelect">
+              <option value="analogous">Аналоговая</option>
+              <option value="triad">Триада</option>
+              <option value="split">Раздельный комплемент</option>
+              <option value="mono">Редакционная моно</option>
+            </select>
+          </label>
+          <div class="control-actions">
+            <button class="button dark" id="saveButton" type="button">Сохранить палитру</button>
+            <button class="button light" id="resetButton" type="button">Сброс</button>
+          </div>
+        </aside>
+
+        <section class="panel palette-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Палитра</p>
+              <h2>Активный набор</h2>
+            </div>
+            <span id="modeLabel">Аналоговая</span>
+          </div>
+          <div class="swatch-grid" id="swatchGrid"></div>
+        </section>
+
+        <section class="panel preview-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Превью</p>
+              <h2>Пример интерфейса</h2>
+            </div>
+          </div>
+          <div class="sample-card" id="sampleCard">
+            <span>Бренд-система</span>
+            <h3>Спокойные инструменты, уверенные решения.</h3>
+            <p>Используйте контрастные палитры, чтобы выпускать отполированные интерфейсы с меньшим количеством компромиссов.</p>
+            <button type="button">Основное действие</button>
+          </div>
+        </section>
+
+        <section class="panel saved-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Сохранено</p>
+              <h2>Библиотека палитр</h2>
+            </div>
+            <button class="button light" id="clearSaved" type="button">Очистить</button>
+          </div>
+          <div class="saved-list" id="savedList"></div>
+        </section>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
