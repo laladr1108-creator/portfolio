@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Swatik11 — портфолио Андрея</title>
-    <meta name="description" content="Портфолио Андрея, username Swatik11: пять интерактивных frontend-проектов, аккуратный UI, светлая и темная тема, публикация на GitHub Pages.">
+    <meta name="description" content="Портфолио Андрея, username Swatik11: frontend-интерфейсы, пять интерактивных проектов, реалистичный набор навыков, Telegram-связь и публикация на GitHub Pages.">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <div class="black-grid" aria-hidden="true"></div>
+    <div class="ambient-bg" aria-hidden="true"></div>
 
     <header class="site-header">
       <a class="brand magnetic" href="#home" aria-label="Наверх">
@@ -22,7 +22,7 @@
 
       <nav class="top-nav" aria-label="Навигация">
         <a href="#works">Работы</a>
-        <a href="#system">Система</a>
+        <a href="#system">Навыки</a>
         <a href="#about">Профиль</a>
         <a href="#contacts">Контакты</a>
       </nav>
@@ -39,12 +39,12 @@
       <section class="hero">
         <div class="hero-copy">
           <p class="kicker"><span>01</span> frontend portfolio / Swatik11</p>
-          <h1>Андрей (Swatik11) — frontend-разработчик с фокусом на надежные веб-интерфейсы.</h1>
-          <p class="hero-text">В портфолио собраны пять интерактивных проектов: аналитический дашборд, планировщик спринта, e-commerce каталог, travel-планер и инструмент палитр. Каждый проект открывается отдельно и показывает реальные сценарии интерфейса.</p>
+          <h1>Я Андрей, Swatik11. Делаю аккуратные frontend-интерфейсы и постепенно усиливаю уровень.</h1>
+          <p class="hero-text">Я собрал это портфолио, чтобы показать не только внешний вид, но и рабочее поведение: карточки, фильтры, модальные окна, локальные состояния, светлую и темную тему. Внутри пять проектов, которые можно открыть и проверить в браузере.</p>
 
           <div class="hero-actions">
             <a class="button primary magnetic" href="#works">Посмотреть проекты</a>
-            <button class="button ghost magnetic" id="openContact" type="button">Связаться</button>
+            <a class="button ghost magnetic" href="https://t.me/Swatik11" target="_blank" rel="noreferrer">Написать в Telegram</a>
           </div>
 
           <div class="signal-row" aria-label="Краткая информация">
@@ -57,8 +57,8 @@
               <strong>5 интерактивных</strong>
             </div>
             <div>
-              <span>визиты</span>
-              <strong id="visitorCount">1</strong>
+              <span>связь</span>
+              <strong>t.me/Swatik11</strong>
             </div>
           </div>
         </div>
@@ -94,7 +94,7 @@
 
             <div class="command-line">
               <span>$</span>
-              <p>open portfolio --user Swatik11 --quality premium</p>
+              <p>open portfolio --user Swatik11 --contact telegram</p>
             </div>
           </div>
         </div>
@@ -111,15 +111,15 @@
       <section class="section-block" id="works">
         <div class="section-heading">
           <p class="kicker"><span>02</span> проекты</p>
-          <h2>Пять проектов с понятными пользовательскими сценариями.</h2>
-          <p>Карточки показывают задачу и интерфейсную логику. Ссылка внутри каждой карточки ведет на рабочую страницу проекта.</p>
+          <h2>Пять проектов, где я показываю разные типы интерфейсов.</h2>
+          <p>Я не завышаю опыт: это учебно-портфолийные проекты, но они рабочие, кликабельные и собраны так, чтобы показать понимание структуры, состояний и пользовательских сценариев.</p>
         </div>
 
         <div class="work-grid" id="workGrid">
           <article class="work-card" data-project="finance" tabindex="0">
             <span class="work-index">01</span>
             <h3>Финансовый центр</h3>
-            <p>Панель для контроля KPI, операций и финансовых сценариев в формате SaaS-дашборда.</p>
+            <p>Показываю работу с KPI-карточками, таблицей, графиком и сценариями в формате SaaS-дашборда.</p>
             <div class="work-tags"><span>дашборд</span><span>метрики</span><span>таблица</span></div>
             <a href="./projects/01-finance-command/index.html">Открыть</a>
           </article>
@@ -127,7 +127,7 @@
           <article class="work-card" data-project="planner" tabindex="0">
             <span class="work-index">02</span>
             <h3>AI-планировщик</h3>
-            <p>Интерфейс планирования спринта с оценкой capacity, рисками и кратким AI-брифом.</p>
+            <p>Показываю планирование задач, capacity, риски и генерацию краткого брифа для команды.</p>
             <div class="work-tags"><span>kanban</span><span>AI</span><span>workflow</span></div>
             <a href="./projects/02-ai-sprint-planner/index.html">Открыть</a>
           </article>
@@ -135,7 +135,7 @@
           <article class="work-card" data-project="commerce" tabindex="0">
             <span class="work-index">03</span>
             <h3>Atelier Commerce</h3>
-            <p>Каталог товаров с фильтрацией, сортировкой, корзиной и оформлением заказа.</p>
+            <p>Показываю каталог, фильтры, сортировку, корзину и понятный путь к оформлению заказа.</p>
             <div class="work-tags"><span>магазин</span><span>фильтры</span><span>корзина</span></div>
             <a href="./projects/03-atelier-commerce/index.html">Открыть</a>
           </article>
@@ -143,7 +143,7 @@
           <article class="work-card" data-project="travel" tabindex="0">
             <span class="work-index">04</span>
             <h3>Nova Travel</h3>
-            <p>Планировщик поездки с маршрутом, картой, бюджетом и дневным таймлайном.</p>
+            <p>Показываю более визуальный интерфейс: маршрут, карта, бюджет и дневной план поездки.</p>
             <div class="work-tags"><span>travel</span><span>карта</span><span>план</span></div>
             <a href="./projects/04-nova-travel/index.html">Открыть</a>
           </article>
@@ -151,7 +151,7 @@
           <article class="work-card wide" data-project="chroma" tabindex="0">
             <span class="work-index">05</span>
             <h3>Chroma Studio</h3>
-            <p>Инструмент для сборки палитр, проверки контраста, сохранения наборов и копирования HEX.</p>
+            <p>Показываю небольшой tool-интерфейс: генерация палитр, контраст, сохранение и копирование HEX.</p>
             <div class="work-tags"><span>цвет</span><span>контраст</span><span>tool UI</span></div>
             <a href="./projects/05-chroma-studio/index.html">Открыть</a>
           </article>
@@ -160,54 +160,69 @@
 
       <section class="system-section" id="system">
         <div class="section-heading">
-          <p class="kicker"><span>03</span> система</p>
-          <h2>Интерфейсная система для уверенной демонстрации работ.</h2>
+          <p class="kicker"><span>03</span> навыки</p>
+          <h2>Что я реально умею и продолжаю прокачивать.</h2>
         </div>
 
         <div class="system-grid">
           <article>
-            <span>visual</span>
-            <h3>Черная и белая темы</h3>
-            <p>Кнопка в шапке переключает весь сайт: фон, панели, текст, линии и акцентные состояния.</p>
+            <span>frontend</span>
+            <h3>HTML, CSS, адаптив</h3>
+            <p>Верстаю страницы, карточки, формы, сетки, состояния hover/focus и аккуратный мобильный вид.</p>
           </article>
           <article>
-            <span>motion</span>
-            <h3>Плавные нажатия</h3>
-            <p>Кнопки, карточки и модальные окна реагируют на hover, press, focus и смену состояния.</p>
+            <span>javascript</span>
+            <h3>Базовая логика UI</h3>
+            <p>Делаю модальные окна, фильтры, локальное сохранение, переключение темы и обработку кликов.</p>
           </article>
           <article>
-            <span>shipping</span>
-            <h3>Готово для GitHub</h3>
-            <p>Статический сайт работает локально, легко публикуется и подходит для GitHub Pages.</p>
+            <span>ui</span>
+            <h3>Интерфейсные состояния</h3>
+            <p>Слежу за пустыми, активными, наведенными и открытыми состояниями, чтобы экран не выглядел сырым.</p>
+          </article>
+          <article>
+            <span>data ui</span>
+            <h3>Дашборды и таблицы</h3>
+            <p>Понимаю базовую структуру KPI, таблиц, графиков и панелей для рабочих интерфейсов.</p>
+          </article>
+          <article>
+            <span>deploy</span>
+            <h3>Git, GitHub Pages, VPS</h3>
+            <p>Умею публиковать статические сайты на GitHub Pages и готовить проект к простому деплою на VPS.</p>
+          </article>
+          <article>
+            <span>integrations</span>
+            <h3>Ссылки и интеграции</h3>
+            <p>Добавляю рабочие внешние ссылки, Telegram-контакты, копирование данных и понятные CTA-кнопки.</p>
           </article>
         </div>
 
         <div class="skill-list" id="skillList">
           <button type="button" aria-expanded="false">
-            <span>Что внутри проектов?</span>
+            <span>Какие технологии я показываю?</span>
             <strong>+</strong>
           </button>
-          <div class="skill-detail">Формы, таблицы, фильтры, интерактивные панели, локальные состояния, модальные окна, аккуратные пустые и активные состояния.</div>
+          <div class="skill-detail">HTML, CSS, JavaScript, адаптивная верстка, CSS-анимации, localStorage, модальные окна, фильтры, таблицы, карточки, ссылки на проекты и простая публикация.</div>
 
           <button type="button" aria-expanded="false">
-            <span>Почему дизайн самостоятельный?</span>
+            <span>На каком я уровне?</span>
             <strong>+</strong>
           </button>
-          <div class="skill-detail">Композиция построена вокруг консольной панели, быстрых ссылок, проектной доски и собственных UI-модулей. Референс использовался только как ориентир по уровню аккуратности, не как шаблон для копирования.</div>
+          <div class="skill-detail">Я не называю себя senior. Сейчас мой фокус — уверенная верстка, понятная логика интерфейсов, аккуратная визуальная подача и регулярная практика на проектах.</div>
 
           <button type="button" aria-expanded="false">
-            <span>Что можно показать работодателю?</span>
+            <span>Что можно открыть и проверить?</span>
             <strong>+</strong>
           </button>
-          <div class="skill-detail">Главную страницу, каждый из пяти проектов, репозиторий GitHub и опубликованную ссылку GitHub Pages.</div>
+          <div class="skill-detail">Главную страницу, пять отдельных проектов, переключение темы, модальные окна, Telegram-связь, копирование username, репозиторий GitHub и опубликованную ссылку.</div>
         </div>
       </section>
 
       <section class="about-section" id="about">
         <div>
           <p class="kicker"><span>04</span> профиль</p>
-          <h2>Андрей, username Swatik11.</h2>
-          <p>Портфолио показывает работу с frontend-интерфейсами, где важны структура, читаемость, стабильная сетка и понятное поведение после каждого действия. Акцент сделан на проектах, которые можно открыть в браузере и проверить руками.</p>
+          <h2>Немного обо мне.</h2>
+          <p>Я развиваюсь во frontend и стараюсь делать интерфейсы, которые выглядят аккуратно и не ломаются при обычном использовании. Мне интересно собирать не просто красивые блоки, а рабочие экраны: с кнопками, состояниями, понятной структурой и нормальным адаптивом.</p>
           <button class="button ghost magnetic" id="openAbout" type="button">Показать фокус</button>
         </div>
         <div class="profile-panel" aria-label="Профиль Swatik11">
@@ -221,27 +236,31 @@
           </div>
           <div class="profile-line">
             <span>focus</span>
-            <strong>frontend / UI</strong>
+            <strong>frontend / UI / deploy</strong>
           </div>
-          <button type="button" id="copyNick">Скопировать @Swatik11</button>
+          <button type="button" id="copyNick" data-telegram="https://t.me/Swatik11">Скопировать @Swatik11</button>
         </div>
       </section>
 
       <section class="contacts-section" id="contacts">
         <div>
           <p class="kicker"><span>05</span> контакты</p>
-          <h2>Портфолио готово для просмотра и отправки.</h2>
-          <p>Ссылку можно отправлять как витрину работ: проекты открываются отдельно, репозиторий доступен публично, username для связи и подписи — Swatik11.</p>
+          <h2>Связаться можно напрямую.</h2>
+          <p>Для связи лучше использовать Telegram. Также можно открыть GitHub-репозиторий или скопировать username, если нужно отправить его отдельно.</p>
         </div>
         <div class="contact-grid">
-          <button class="contact-tile" type="button" data-copy="@Swatik11">
-            <span>Username</span>
-            <strong>@Swatik11</strong>
-          </button>
+          <a class="contact-tile" href="https://t.me/Swatik11" target="_blank" rel="noreferrer">
+            <span>Telegram</span>
+            <strong>Написать @Swatik11</strong>
+          </a>
           <a class="contact-tile" href="https://github.com/laladr1108-creator/portfolio" target="_blank" rel="noreferrer">
             <span>GitHub</span>
             <strong>portfolio repository</strong>
           </a>
+          <button class="contact-tile" type="button" data-copy="@Swatik11" data-telegram="https://t.me/Swatik11">
+            <span>Copy</span>
+            <strong>Скопировать username</strong>
+          </button>
         </div>
       </section>
     </main>
@@ -249,7 +268,7 @@
     <footer class="footer">
       <div>
         <strong>Swatik11 / Андрей</strong>
-        <span>Frontend-портфолио с темной и светлой темой</span>
+        <span>Frontend-портфолио, Telegram: @Swatik11</span>
       </div>
       <a href="#home">Наверх</a>
     </footer>
@@ -272,9 +291,10 @@
         <button class="modal-close" type="button" data-close aria-label="Закрыть">×</button>
         <p class="kicker"><span>msg</span> связь</p>
         <h2 id="contactTitle">Связаться со Swatik11</h2>
-        <p>Username можно скопировать для связи. Репозиторий GitHub открыт публично; позже сюда можно добавить Telegram, почту или форму.</p>
+        <p>Telegram откроется в новой вкладке. Если удобнее отправить username вручную, его можно скопировать отдельной кнопкой.</p>
         <div class="contact-actions">
-          <button class="button primary" type="button" data-copy="@Swatik11">Скопировать @Swatik11</button>
+          <a class="button primary" href="https://t.me/Swatik11" target="_blank" rel="noreferrer">Написать в Telegram</a>
+          <button class="button ghost" type="button" data-copy="@Swatik11" data-telegram="https://t.me/Swatik11">Скопировать @Swatik11</button>
           <a class="button ghost" href="https://github.com/laladr1108-creator/portfolio" target="_blank" rel="noreferrer">Открыть GitHub</a>
         </div>
       </section>

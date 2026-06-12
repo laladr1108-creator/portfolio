@@ -52,8 +52,10 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   background:
-    radial-gradient(circle at 70% -10%, rgba(75, 228, 255, 0.11), transparent 24rem),
-    radial-gradient(circle at 8% 18%, rgba(182, 255, 92, 0.08), transparent 21rem),
+    linear-gradient(115deg, transparent 0 36%, rgba(182, 255, 92, 0.07) 36% 37%, transparent 37% 100%),
+    linear-gradient(145deg, transparent 0 58%, rgba(75, 228, 255, 0.06) 58% 59%, transparent 59% 100%),
+    radial-gradient(ellipse at 70% -10%, rgba(75, 228, 255, 0.11), transparent 24rem),
+    radial-gradient(ellipse at 8% 18%, rgba(182, 255, 92, 0.08), transparent 21rem),
     linear-gradient(180deg, var(--bg), #050608 42%, #010102);
   color: var(--ink);
   font-family: var(--mono);
@@ -63,8 +65,10 @@ body {
 
 body.light-mode {
   background:
-    radial-gradient(circle at 76% -10%, rgba(37, 99, 235, 0.12), transparent 25rem),
-    radial-gradient(circle at 8% 20%, rgba(15, 159, 110, 0.1), transparent 22rem),
+    linear-gradient(115deg, transparent 0 36%, rgba(37, 99, 235, 0.08) 36% 37%, transparent 37% 100%),
+    linear-gradient(145deg, transparent 0 58%, rgba(15, 159, 110, 0.07) 58% 59%, transparent 59% 100%),
+    radial-gradient(ellipse at 76% -10%, rgba(37, 99, 235, 0.12), transparent 25rem),
+    radial-gradient(ellipse at 8% 20%, rgba(15, 159, 110, 0.1), transparent 22rem),
     linear-gradient(180deg, #ffffff, #f4f6fa 46%, #ffffff);
 }
 
@@ -72,22 +76,56 @@ body.modal-open {
   overflow: hidden;
 }
 
-.black-grid {
+.ambient-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-  background-size: 54px 54px;
-  mask-image: linear-gradient(180deg, black, transparent 84%);
+    repeating-linear-gradient(115deg, rgba(255,255,255,0.07) 0 1px, transparent 1px 84px),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.035) 0 1px, transparent 1px 18px);
+  background-size: 100% 100%, 100% 36px;
+  mask-image: linear-gradient(180deg, black, rgba(0,0,0,0.72) 52%, transparent 92%);
+  opacity: 0.55;
 }
 
-body.light-mode .black-grid {
+.ambient-bg::before,
+.ambient-bg::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    linear-gradient(120deg, transparent 18%, rgba(182,255,92,0.1) 31%, transparent 44%),
+    linear-gradient(62deg, transparent 46%, rgba(75,228,255,0.08) 58%, transparent 70%);
+  filter: blur(24px);
+  transform: rotate(-4deg);
+}
+
+.ambient-bg::after {
+  background:
+    linear-gradient(145deg, transparent 30%, rgba(167,139,250,0.09) 46%, transparent 60%),
+    linear-gradient(20deg, transparent 55%, rgba(255,255,255,0.055) 65%, transparent 74%);
+  transform: rotate(7deg);
+  opacity: 0.7;
+}
+
+body.light-mode .ambient-bg {
   background-image:
-    linear-gradient(rgba(13, 18, 28, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(13, 18, 28, 0.055) 1px, transparent 1px);
+    repeating-linear-gradient(115deg, rgba(13,18,28,0.07) 0 1px, transparent 1px 88px),
+    repeating-linear-gradient(0deg, rgba(13,18,28,0.035) 0 1px, transparent 1px 20px);
+  opacity: 0.42;
+}
+
+body.light-mode .ambient-bg::before {
+  background:
+    linear-gradient(120deg, transparent 18%, rgba(37,99,235,0.1) 31%, transparent 44%),
+    linear-gradient(62deg, transparent 46%, rgba(15,159,110,0.08) 58%, transparent 70%);
+}
+
+body.light-mode .ambient-bg::after {
+  background:
+    linear-gradient(145deg, transparent 30%, rgba(17,24,39,0.06) 46%, transparent 60%),
+    linear-gradient(20deg, transparent 55%, rgba(255,255,255,0.5) 65%, transparent 74%);
 }
 
 a {
@@ -773,7 +811,18 @@ body.light-mode .contact-tile {
 }
 
 .system-grid article {
+  position: relative;
   padding: 22px;
+  overflow: hidden;
+}
+
+.system-grid article::after {
+  content: "";
+  position: absolute;
+  inset: auto 18px 18px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  opacity: 0.42;
 }
 
 .system-grid h3 {
