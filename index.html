@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Swatik11 — портфолио Андрея</title>
-    <meta name="description" content="Портфолио Андрея, username Swatik11: пять рабочих frontend-проектов, черный premium UI, плавные действия и GitHub Pages.">
+    <meta name="description" content="Портфолио Андрея, username Swatik11: пять интерактивных frontend-проектов, аккуратный UI, светлая и темная тема, публикация на GitHub Pages.">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./styles.css">
   </head>
@@ -27,7 +27,7 @@
         <a href="#contacts">Контакты</a>
       </nav>
 
-      <button class="icon-button magnetic" id="themeToggle" type="button" aria-label="Сменить акцент" title="Сменить акцент">
+      <button class="icon-button magnetic" id="themeToggle" type="button" aria-label="Включить белую тему" title="Включить белую тему" aria-pressed="false">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/>
           <circle cx="12" cy="12" r="4"/>
@@ -38,13 +38,13 @@
     <main id="home">
       <section class="hero">
         <div class="hero-copy">
-          <p class="kicker"><span>01</span> portfolio node / Swatik11</p>
-          <h1>Андрей / Swatik11 создает черные интерфейсы для рабочих продуктов.</h1>
-          <p class="hero-text">Пять готовых frontend-проектов: аналитика, планирование, каталог, travel-интерфейс и инструмент цвета. Открывай, нажимай, смотри поведение.</p>
+          <p class="kicker"><span>01</span> frontend portfolio / Swatik11</p>
+          <h1>Андрей (Swatik11) — frontend-разработчик с фокусом на надежные веб-интерфейсы.</h1>
+          <p class="hero-text">В портфолио собраны пять интерактивных проектов: аналитический дашборд, планировщик спринта, e-commerce каталог, travel-планер и инструмент палитр. Каждый проект открывается отдельно и показывает реальные сценарии интерфейса.</p>
 
           <div class="hero-actions">
-            <a class="button primary magnetic" href="#works">Смотреть проекты</a>
-            <button class="button ghost magnetic" id="openContact" type="button">Контакт</button>
+            <a class="button primary magnetic" href="#works">Посмотреть проекты</a>
+            <button class="button ghost magnetic" id="openContact" type="button">Связаться</button>
           </div>
 
           <div class="signal-row" aria-label="Краткая информация">
@@ -54,7 +54,7 @@
             </div>
             <div>
               <span>проекты</span>
-              <strong>5 рабочих</strong>
+              <strong>5 интерактивных</strong>
             </div>
             <div>
               <span>визиты</span>
@@ -88,7 +88,7 @@
               </div>
               <div class="mini-metric">
                 <small>theme</small>
-                <strong>black</strong>
+                <strong data-theme-label>black</strong>
               </div>
             </div>
 
@@ -111,15 +111,15 @@
       <section class="section-block" id="works">
         <div class="section-heading">
           <p class="kicker"><span>02</span> проекты</p>
-          <h2>Рабочая пятерка без муляжей.</h2>
-          <p>Каждая карточка открывает описание, а ссылка внутри ведет в полноценный проект.</p>
+          <h2>Пять проектов с понятными пользовательскими сценариями.</h2>
+          <p>Карточки показывают задачу и интерфейсную логику. Ссылка внутри каждой карточки ведет на рабочую страницу проекта.</p>
         </div>
 
         <div class="work-grid" id="workGrid">
           <article class="work-card" data-project="finance" tabindex="0">
             <span class="work-index">01</span>
             <h3>Финансовый центр</h3>
-            <p>SaaS-дашборд с KPI, графиком, таблицей операций и сценариями.</p>
+            <p>Панель для контроля KPI, операций и финансовых сценариев в формате SaaS-дашборда.</p>
             <div class="work-tags"><span>дашборд</span><span>метрики</span><span>таблица</span></div>
             <a href="./projects/01-finance-command/index.html">Открыть</a>
           </article>
@@ -127,7 +127,7 @@
           <article class="work-card" data-project="planner" tabindex="0">
             <span class="work-index">02</span>
             <h3>AI-планировщик</h3>
-            <p>Планирование спринта: backlog, capacity, риски и быстрый бриф.</p>
+            <p>Интерфейс планирования спринта с оценкой capacity, рисками и кратким AI-брифом.</p>
             <div class="work-tags"><span>kanban</span><span>AI</span><span>workflow</span></div>
             <a href="./projects/02-ai-sprint-planner/index.html">Открыть</a>
           </article>
@@ -135,7 +135,7 @@
           <article class="work-card" data-project="commerce" tabindex="0">
             <span class="work-index">03</span>
             <h3>Atelier Commerce</h3>
-            <p>Каталог с фильтрами, сортировкой, корзиной и checkout-потоком.</p>
+            <p>Каталог товаров с фильтрацией, сортировкой, корзиной и оформлением заказа.</p>
             <div class="work-tags"><span>магазин</span><span>фильтры</span><span>корзина</span></div>
             <a href="./projects/03-atelier-commerce/index.html">Открыть</a>
           </article>
@@ -143,7 +143,7 @@
           <article class="work-card" data-project="travel" tabindex="0">
             <span class="work-index">04</span>
             <h3>Nova Travel</h3>
-            <p>Интерфейс поездки с маршрутом, картой, бюджетом и таймлайном.</p>
+            <p>Планировщик поездки с маршрутом, картой, бюджетом и дневным таймлайном.</p>
             <div class="work-tags"><span>travel</span><span>карта</span><span>план</span></div>
             <a href="./projects/04-nova-travel/index.html">Открыть</a>
           </article>
@@ -151,7 +151,7 @@
           <article class="work-card wide" data-project="chroma" tabindex="0">
             <span class="work-index">05</span>
             <h3>Chroma Studio</h3>
-            <p>Генератор палитр с проверкой контраста, сохранением наборов и копированием HEX.</p>
+            <p>Инструмент для сборки палитр, проверки контраста, сохранения наборов и копирования HEX.</p>
             <div class="work-tags"><span>цвет</span><span>контраст</span><span>tool UI</span></div>
             <a href="./projects/05-chroma-studio/index.html">Открыть</a>
           </article>
@@ -161,24 +161,24 @@
       <section class="system-section" id="system">
         <div class="section-heading">
           <p class="kicker"><span>03</span> система</p>
-          <h2>Черный интерфейс с быстрым откликом.</h2>
+          <h2>Интерфейсная система для уверенной демонстрации работ.</h2>
         </div>
 
         <div class="system-grid">
           <article>
             <span>visual</span>
-            <h3>Преимущественно черный</h3>
-            <p>Глубокий фон, тонкие линии, аккуратные акценты и контрастный текст.</p>
+            <h3>Черная и белая темы</h3>
+            <p>Кнопка в шапке переключает весь сайт: фон, панели, текст, линии и акцентные состояния.</p>
           </article>
           <article>
             <span>motion</span>
             <h3>Плавные нажатия</h3>
-            <p>Кнопки и карточки реагируют на hover, press, focus и открытие модалок.</p>
+            <p>Кнопки, карточки и модальные окна реагируют на hover, press, focus и смену состояния.</p>
           </article>
           <article>
             <span>shipping</span>
             <h3>Готово для GitHub</h3>
-            <p>Статический сайт работает локально и подходит для GitHub Pages.</p>
+            <p>Статический сайт работает локально, легко публикуется и подходит для GitHub Pages.</p>
           </article>
         </div>
 
@@ -190,10 +190,10 @@
           <div class="skill-detail">Формы, таблицы, фильтры, интерактивные панели, локальные состояния, модальные окна, аккуратные пустые и активные состояния.</div>
 
           <button type="button" aria-expanded="false">
-            <span>Почему дизайн не похож на референс?</span>
+            <span>Почему дизайн самостоятельный?</span>
             <strong>+</strong>
           </button>
-          <div class="skill-detail">Здесь другая композиция: консольный hero, быстрые ссылки, черная сетка, проектная доска и собственные UI-модули вместо копирования чужой структуры.</div>
+          <div class="skill-detail">Композиция построена вокруг консольной панели, быстрых ссылок, проектной доски и собственных UI-модулей. Референс использовался только как ориентир по уровню аккуратности, не как шаблон для копирования.</div>
 
           <button type="button" aria-expanded="false">
             <span>Что можно показать работодателю?</span>
@@ -207,8 +207,8 @@
         <div>
           <p class="kicker"><span>04</span> профиль</p>
           <h2>Андрей, username Swatik11.</h2>
-          <p>Собираю интерфейсы, которые можно не только показать на скриншоте, но и открыть в браузере. Фокус: чистая структура, темная эстетика, быстрые сценарии и понятное поведение после каждого клика.</p>
-          <button class="button ghost magnetic" id="openAbout" type="button">Коротко о стиле</button>
+          <p>Портфолио показывает работу с frontend-интерфейсами, где важны структура, читаемость, стабильная сетка и понятное поведение после каждого действия. Акцент сделан на проектах, которые можно открыть в браузере и проверить руками.</p>
+          <button class="button ghost magnetic" id="openAbout" type="button">Показать фокус</button>
         </div>
         <div class="profile-panel" aria-label="Профиль Swatik11">
           <div class="profile-line">
@@ -230,8 +230,8 @@
       <section class="contacts-section" id="contacts">
         <div>
           <p class="kicker"><span>05</span> контакты</p>
-          <h2>Готов к новым задачам.</h2>
-          <p>Можно отправлять ссылку на портфолио, показывать проекты и открывать репозиторий. Username для связи и подписи: Swatik11.</p>
+          <h2>Портфолио готово для просмотра и отправки.</h2>
+          <p>Ссылку можно отправлять как витрину работ: проекты открываются отдельно, репозиторий доступен публично, username для связи и подписи — Swatik11.</p>
         </div>
         <div class="contact-grid">
           <button class="contact-tile" type="button" data-copy="@Swatik11">
@@ -249,7 +249,7 @@
     <footer class="footer">
       <div>
         <strong>Swatik11 / Андрей</strong>
-        <span>Черное frontend-портфолио</span>
+        <span>Frontend-портфолио с темной и светлой темой</span>
       </div>
       <a href="#home">Наверх</a>
     </footer>
@@ -272,7 +272,7 @@
         <button class="modal-close" type="button" data-close aria-label="Закрыть">×</button>
         <p class="kicker"><span>msg</span> связь</p>
         <h2 id="contactTitle">Связаться со Swatik11</h2>
-        <p>Скопируй username или открой GitHub. Позже сюда можно добавить Telegram, почту или форму.</p>
+        <p>Username можно скопировать для связи. Репозиторий GitHub открыт публично; позже сюда можно добавить Telegram, почту или форму.</p>
         <div class="contact-actions">
           <button class="button primary" type="button" data-copy="@Swatik11">Скопировать @Swatik11</button>
           <a class="button ghost" href="https://github.com/laladr1108-creator/portfolio" target="_blank" rel="noreferrer">Открыть GitHub</a>

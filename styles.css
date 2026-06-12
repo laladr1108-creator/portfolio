@@ -23,10 +23,20 @@
   --motion-slow: 380ms;
 }
 
-body.alt-accent {
-  --accent: #4be4ff;
-  --accent-2: #ff4fd8;
-  --accent-3: #b6ff5c;
+body.light-mode {
+  --bg: #f7f8fb;
+  --bg-2: #ffffff;
+  --panel: rgba(255, 255, 255, 0.92);
+  --panel-solid: #ffffff;
+  --ink: #0b0d12;
+  --muted: #4c5565;
+  --soft: #7a8391;
+  --line: rgba(13, 18, 28, 0.13);
+  --line-strong: rgba(13, 18, 28, 0.22);
+  --accent: #111827;
+  --accent-2: #2563eb;
+  --accent-3: #0f9f6e;
+  --shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
 }
 
 * {
@@ -48,6 +58,14 @@ body {
   color: var(--ink);
   font-family: var(--mono);
   letter-spacing: 0;
+  transition: background var(--motion-slow) var(--ease-standard), color var(--motion-base) var(--ease-standard);
+}
+
+body.light-mode {
+  background:
+    radial-gradient(circle at 76% -10%, rgba(37, 99, 235, 0.12), transparent 25rem),
+    radial-gradient(circle at 8% 20%, rgba(15, 159, 110, 0.1), transparent 22rem),
+    linear-gradient(180deg, #ffffff, #f4f6fa 46%, #ffffff);
 }
 
 body.modal-open {
@@ -64,6 +82,12 @@ body.modal-open {
     linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: 54px 54px;
   mask-image: linear-gradient(180deg, black, transparent 84%);
+}
+
+body.light-mode .black-grid {
+  background-image:
+    linear-gradient(rgba(13, 18, 28, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 18, 28, 0.055) 1px, transparent 1px);
 }
 
 a {
@@ -124,6 +148,11 @@ main,
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03), 0 20px 50px rgba(0,0,0,0.42);
 }
 
+body.light-mode .brand-mark {
+  background: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.8), 0 18px 45px rgba(15,23,42,0.1);
+}
+
 .brand strong,
 .brand small {
   display: block;
@@ -152,6 +181,10 @@ main,
   backdrop-filter: blur(18px);
 }
 
+body.light-mode .top-nav {
+  background: rgba(255, 255, 255, 0.78);
+}
+
 .top-nav a {
   position: relative;
   padding: 9px 13px;
@@ -170,6 +203,11 @@ main,
   transform: translateY(-1px);
 }
 
+body.light-mode .top-nav a:hover,
+body.light-mode .top-nav a:focus-visible {
+  background: rgba(13,18,28,0.07);
+}
+
 .icon-button {
   display: grid;
   width: 46px;
@@ -182,11 +220,20 @@ main,
   transition: transform var(--motion-fast) var(--ease-out), border-color var(--motion-base) var(--ease-standard), background var(--motion-base) var(--ease-standard);
 }
 
+body.light-mode .icon-button {
+  background: rgba(255,255,255,0.86);
+}
+
 .icon-button:hover,
 .icon-button:focus-visible {
   border-color: var(--accent);
   background: rgba(182, 255, 92, 0.08);
   outline: none;
+}
+
+body.light-mode .icon-button:hover,
+body.light-mode .icon-button:focus-visible {
+  background: rgba(17,24,39,0.08);
 }
 
 .icon-button svg {
@@ -324,6 +371,11 @@ p::selection {
   font-weight: 900;
 }
 
+body.light-mode .button.primary {
+  background: #111827;
+  color: #ffffff;
+}
+
 .button.ghost {
   background: rgba(255,255,255,0.045);
 }
@@ -342,6 +394,10 @@ p::selection {
   border-radius: 16px;
   padding: 14px;
   background: rgba(255,255,255,0.035);
+}
+
+body.light-mode .signal-row div {
+  background: rgba(255,255,255,0.82);
 }
 
 .signal-row span,
@@ -369,6 +425,12 @@ p::selection {
     rgba(5, 6, 8, 0.92);
   box-shadow: var(--shadow);
   overflow: hidden;
+}
+
+body.light-mode .hero-console {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.98), rgba(244,246,250,0.88)),
+    #ffffff;
 }
 
 .hero-console::after {
@@ -432,6 +494,10 @@ p::selection {
   background: #050608;
 }
 
+body.light-mode .preview-window {
+  background: #ffffff;
+}
+
 .preview-window img {
   width: 100%;
   height: 100%;
@@ -462,6 +528,12 @@ p::selection {
   border-radius: 18px;
   background: rgba(255,255,255,0.045);
   padding: 14px;
+}
+
+body.light-mode .status-chip,
+body.light-mode .mini-metric,
+body.light-mode .command-line {
+  background: rgba(255,255,255,0.88);
 }
 
 .status-chip {
@@ -507,6 +579,10 @@ p::selection {
   background: rgba(182, 255, 92, 0.05);
 }
 
+body.light-mode .command-line {
+  border-color: rgba(17,24,39,0.18);
+}
+
 .command-line span {
   color: var(--accent);
   font-weight: 900;
@@ -539,11 +615,20 @@ p::selection {
   transition: color var(--motion-base) var(--ease-standard), background var(--motion-base) var(--ease-standard);
 }
 
+body.light-mode .project-strip a {
+  background: rgba(255,255,255,0.9);
+}
+
 .project-strip a:hover,
 .project-strip a:focus-visible {
   color: var(--ink);
   background: rgba(182,255,92,0.08);
   outline: none;
+}
+
+body.light-mode .project-strip a:hover,
+body.light-mode .project-strip a:focus-visible {
+  background: rgba(17,24,39,0.06);
 }
 
 .section-block,
@@ -592,6 +677,15 @@ p::selection {
   background:
     linear-gradient(145deg, rgba(255,255,255,0.065), rgba(255,255,255,0.022)),
     rgba(6, 7, 10, 0.9);
+}
+
+body.light-mode .work-card,
+body.light-mode .system-grid article,
+body.light-mode .profile-panel,
+body.light-mode .contact-tile {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.98), rgba(246,248,252,0.86)),
+    #ffffff;
 }
 
 .work-card {
@@ -716,12 +810,22 @@ p::selection {
   transition: border-color var(--motion-base) var(--ease-standard), background var(--motion-base) var(--ease-standard);
 }
 
+body.light-mode .skill-list button {
+  background: rgba(255,255,255,0.82);
+}
+
 .skill-list button:hover,
 .skill-list button:focus-visible,
 .skill-list button[aria-expanded="true"] {
   border-color: var(--accent);
   background: rgba(182,255,92,0.07);
   outline: none;
+}
+
+body.light-mode .skill-list button:hover,
+body.light-mode .skill-list button:focus-visible,
+body.light-mode .skill-list button[aria-expanded="true"] {
+  background: rgba(17,24,39,0.06);
 }
 
 .skill-list strong {
@@ -782,6 +886,11 @@ p::selection {
   background: #07080b;
 }
 
+body.light-mode .profile-line,
+body.light-mode .profile-panel button {
+  background: #ffffff;
+}
+
 .profile-line strong {
   display: block;
   margin-top: 8px;
@@ -800,6 +909,11 @@ p::selection {
   background: rgba(182,255,92,0.1);
   color: var(--ink);
   outline: none;
+}
+
+body.light-mode .profile-panel button:hover,
+body.light-mode .profile-panel button:focus-visible {
+  background: rgba(17,24,39,0.06);
 }
 
 .contacts-section {
@@ -883,6 +997,10 @@ p::selection {
   backdrop-filter: blur(12px);
 }
 
+body.light-mode .modal-backdrop {
+  background: rgba(248, 250, 252, 0.72);
+}
+
 .modal-panel {
   position: relative;
   width: min(620px, 100%);
@@ -895,6 +1013,12 @@ p::selection {
   box-shadow: var(--shadow);
   transform: translateY(16px) scale(0.96);
   transition: transform var(--motion-slow) var(--ease-premium);
+}
+
+body.light-mode .modal-panel {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.98), rgba(246,248,252,0.9)),
+    #ffffff;
 }
 
 .modal[aria-hidden="false"] .modal-panel {
@@ -914,6 +1038,10 @@ p::selection {
   background: rgba(255,255,255,0.045);
   cursor: pointer;
   font-size: 23px;
+}
+
+body.light-mode .modal-close {
+  background: rgba(255,255,255,0.9);
 }
 
 .modal-close:hover,
@@ -962,6 +1090,11 @@ p::selection {
   transform: translateY(14px);
   pointer-events: none;
   transition: opacity var(--motion-base) var(--ease-standard), transform var(--motion-base) var(--ease-standard);
+}
+
+body.light-mode .toast {
+  background: rgba(255,255,255,0.96);
+  border-color: rgba(17,24,39,0.18);
 }
 
 .toast.show {

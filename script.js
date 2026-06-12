@@ -1,31 +1,31 @@
 const projectData = {
   finance: {
     title: "Финансовый центр",
-    text: "SaaS-дашборд для руководителя: KPI, график, прогноз, сценарии и таблица операций. Хорошо показывает работу с данными и интерфейсом принятия решений.",
+    text: "Демонстрационный SaaS-дашборд для контроля KPI, финансовых сценариев и списка операций. Проект показывает работу с метриками, табличными данными и управляемыми состояниями интерфейса.",
     href: "./projects/01-finance-command/index.html",
     tags: ["дашборд", "финансы", "интерактивный график"]
   },
   planner: {
     title: "AI-планировщик спринта",
-    text: "Инструмент для продуктовой команды: backlog, capacity, риски, создание задач и AI-бриф. Внутри есть живые состояния и быстрые действия.",
+    text: "Интерфейс для планирования спринта: backlog, capacity, оценка рисков и краткий AI-бриф. Подходит для демонстрации продуктового workflow и быстрых действий в рабочей панели.",
     href: "./projects/02-ai-sprint-planner/index.html",
     tags: ["планирование", "продукт", "ai-процесс"]
   },
   commerce: {
     title: "Atelier Commerce",
-    text: "Премиальная витрина магазина с фильтрами, сортировкой, карточками товаров и выезжающей корзиной. Проект показывает e-commerce flow.",
+    text: "E-commerce каталог с фильтрами, сортировкой, карточками товаров и корзиной. Проект показывает полный путь от выбора товара до оформления заказа.",
     href: "./projects/03-atelier-commerce/index.html",
     tags: ["магазин", "фильтры", "выезжающая корзина"]
   },
   travel: {
     title: "Nova Travel",
-    text: "Планировщик поездок с направлениями, картой, бюджетом и дневным маршрутом. Хороший пример эмоционального, но рабочего интерфейса.",
+    text: "Планировщик поездки с направлениями, картой, бюджетом и дневным маршрутом. Проект сочетает визуальную подачу и практичный сценарий планирования.",
     href: "./projects/04-nova-travel/index.html",
     tags: ["поездки", "карта", "маршрут"]
   },
   chroma: {
     title: "Chroma Studio",
-    text: "Креативный редактор цветовых палитр: генерация, сохранение, копирование HEX и проверка контраста. Подходит для демонстрации tool UI.",
+    text: "Инструмент для работы с цветовыми палитрами: генерация, сохранение, копирование HEX и проверка контраста. Проект демонстрирует интерфейс небольшого профессионального инструмента.",
     href: "./projects/05-chroma-studio/index.html",
     tags: ["креативный инструмент", "палитра", "контраст"]
   }
@@ -39,6 +39,8 @@ const modalTitle = document.querySelector("#modalTitle");
 const modalText = document.querySelector("#modalText");
 const modalMeta = document.querySelector("#modalMeta");
 const modalLink = document.querySelector("#modalLink");
+const themeToggle = document.querySelector("#themeToggle");
+const themeLabel = document.querySelector("[data-theme-label]");
 
 function showToast(message) {
   toast.textContent = message;
@@ -114,12 +116,28 @@ document.addEventListener("keydown", (event) => {
 
 document.querySelector("#openContact").addEventListener("click", () => openModal(contactModal));
 document.querySelector("#openAbout").addEventListener("click", () => {
-  showToast("Андрей / Swatik11: черный UI, frontend, быстрые сценарии");
+  showToast("Фокус: frontend, UI-системы, понятные сценарии");
 });
 
-document.querySelector("#themeToggle").addEventListener("click", () => {
-  document.body.classList.toggle("alt-accent");
-  showToast(document.body.classList.contains("alt-accent") ? "Холодный акцент включен" : "Лаймовый акцент включен");
+function syncThemeLabel() {
+  const isLight = document.body.classList.contains("light-mode");
+  themeToggle.setAttribute("aria-pressed", String(isLight));
+  themeToggle.setAttribute("aria-label", isLight ? "Включить черную тему" : "Включить белую тему");
+  themeToggle.title = isLight ? "Включить черную тему" : "Включить белую тему";
+  if (themeLabel) themeLabel.textContent = isLight ? "white" : "black";
+}
+
+const savedTheme = localStorage.getItem("swatik11-theme");
+if (savedTheme === "white") {
+  document.body.classList.add("light-mode");
+}
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+  const isLight = document.body.classList.contains("light-mode");
+  localStorage.setItem("swatik11-theme", isLight ? "white" : "black");
+  syncThemeLabel();
+  showToast(isLight ? "Белая тема включена" : "Черная тема включена");
 });
 
 document.querySelector("#copyNick").addEventListener("click", () => copyText("@Swatik11"));
@@ -150,3 +168,4 @@ document.querySelectorAll(".magnetic").forEach((item) => {
 });
 
 updateVisitors();
+syncThemeLabel();
