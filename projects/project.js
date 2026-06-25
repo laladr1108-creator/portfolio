@@ -11,9 +11,10 @@ const apps = {
       { name: "Протеин + яблоко", calories: 210, protein: 25, fat: 2, carbs: 22 }
     ]
   },
-  vpn: {
+  fluxvpn: {
     active: true,
     server: "Нидерланды",
+    plan: "Pro",
     servers: [
       { country: "Нидерланды", ping: 32, speed: 920 },
       { country: "Германия", ping: 41, speed: 870 },
@@ -29,19 +30,27 @@ const apps = {
       { name: "Status Travel", tier: "Серебро", status: "активен", potential: 880000, conversion: 49 }
     ]
   },
-  workboard: {
-    tasks: [
-      { title: "Собрать первый экран", status: "В работе", priority: "высокий" },
-      { title: "Проверить мобильную сетку", status: "Готово", priority: "средний" },
-      { title: "Добавить пустые состояния", status: "План", priority: "низкий" }
-    ]
+  tgorder: {
+    cart: [],
+    menu: [
+      { name: "Лендинг под ключ", price: 15000 },
+      { name: "Telegram-бот", price: 12000 },
+      { name: "Дизайн карточки", price: 4500 }
+    ],
+    statuses: ["Новая заявка", "Уточнение", "В работе", "Готово"]
   },
-  money: {
-    budget: 85000,
-    expenses: [
-      { name: "Аренда", category: "Дом", amount: 30000 },
-      { name: "Продукты", category: "Еда", amount: 14200 },
-      { name: "Сервисы", category: "Подписки", amount: 4200 }
+  tgsupport: {
+    activeTicket: 0,
+    replies: 0,
+    tickets: [
+      { name: "Оплата не прошла", user: "@client_one", priority: "важно", status: "новая" },
+      { name: "Нужен доступ к боту", user: "@market_lead", priority: "обычно", status: "в работе" },
+      { name: "Вопрос по тарифу", user: "@flux_user", priority: "низко", status: "ответить" }
+    ],
+    templates: [
+      "Здравствуйте. Проверяю вопрос и скоро вернусь с ответом.",
+      "Можете прислать скрин оплаты или ID заявки?",
+      "Готово, доступ обновлен. Проверьте, пожалуйста."
     ]
   }
 };
@@ -100,8 +109,13 @@ function renderKbju() {
   root.innerHTML = `
     <section class="grid">
       <article class="panel">
-        <p class="eyebrow">дневник питания</p>
-        <h2>Рацион на день</h2>
+        <p class="eyebrow">telegram сценарий</p>
+        <h2>КБЖУ внутри бота</h2>
+        <div class="phone-frame">
+          <div class="phone-top"><span>КБЖУ Bot</span><span>online</span></div>
+          <div class="phone-message"><strong>Сегодня съедено ${total.calories} ккал</strong><small>Осталось ${Math.max(0, state.targets.calories - total.calories)} ккал. Белки: ${total.protein}/${state.targets.protein} г.</small></div>
+          <div class="phone-message"><strong>Быстрые продукты</strong><small>Нажми пресет ниже, чтобы добавить прием пищи.</small></div>
+        </div>
         <div class="chips">${state.presets.map((meal, index) => `<button type="button" data-preset="${index}">${meal.name}</button>`).join("")}</div>
         <div class="list">${state.meals.map((meal, index) => `
           <div class="list-item">
@@ -111,7 +125,7 @@ function renderKbju() {
       </article>
       <aside class="panel">
         <p class="eyebrow">прогресс</p>
-        <h2>Прогресс</h2>
+        <h2>Макросы</h2>
         <div class="bars">${bars.map(([label, value, target, unit]) => `
           <div>
             <div class="bar-label"><span>${label}</span><strong>${value} / ${target} ${unit}</strong></div>
@@ -122,7 +136,7 @@ function renderKbju() {
   `;
 }
 
-function renderVpn() {
+function renderFluxvpn() {
   const activeServer = state.servers.find((server) => server.country === state.server);
   renderMetrics([
     { label: "статус", value: state.active ? "защищен" : "выключен" },
@@ -134,10 +148,10 @@ function renderVpn() {
   root.innerHTML = `
     <section class="grid">
       <article class="panel">
-        <p class="eyebrow">подключение</p>
-        <h2>${state.active ? "VPN подключен" : "VPN выключен"}</h2>
-        <p>Панель показывает понятный личный кабинет: текущий сервер, статус защиты, скорость и выбор локации.</p>
-        <div class="actions"><button class="button primary" type="button" data-toggle-vpn>${state.active ? "Отключить" : "Подключить"}</button></div>
+        <p class="eyebrow">FluxVpn кабинет</p>
+        <h2>${state.active ? "Защита включена" : "Защита выключена"}</h2>
+        <p>Панель показывает основной сценарий FluxVpn: подключение, выбор страны, скорость, ping, тариф и активные устройства.</p>
+        <div class="actions"><button class="button primary" type="button" data-toggle-flux>${state.active ? "Отключить" : "Подключить"}</button></div>
         <div class="cards">${state.servers.map((server) => `
           <button class="small-card" type="button" data-server="${server.country}">
             <span>${server.country}</span>
@@ -146,11 +160,12 @@ function renderVpn() {
           </button>`).join("")}</div>
       </article>
       <aside class="panel">
-        <p class="eyebrow">устройства</p>
-        <h2>Устройства</h2>
+        <p class="eyebrow">тариф и устройства</p>
+        <h2>${state.plan}</h2>
         <div class="list">
-          <div class="list-item"><div><strong>iPhone</strong><span>сейчас подключен</span></div><span class="status-pill">онлайн</span></div>
-          <div class="list-item"><div><strong>Windows PC</strong><span>последняя активность сегодня</span></div><span class="status-pill">защищен</span></div>
+          <div class="list-item"><div><strong>iPhone</strong><span>подключен через ${state.server}</span></div><span class="status-pill">online</span></div>
+          <div class="list-item"><div><strong>Windows PC</strong><span>последняя активность сегодня</span></div><span class="status-pill">safe</span></div>
+          <div class="list-item"><div><strong>Лимит</strong><span>5 устройств в тарифе</span></div><span class="status-pill">2/5</span></div>
         </div>
       </aside>
     </section>
@@ -170,7 +185,7 @@ function renderExclusive() {
     <section class="grid">
       <article class="panel">
         <p class="eyebrow">партнеры</p>
-        <h2>Партнеры</h2>
+        <h2>Exclusive pipeline</h2>
         <div class="chips">
           <button type="button" data-filter="all">Все</button>
           <button type="button" data-filter="Черный">Черный</button>
@@ -200,76 +215,74 @@ function partnerCards(list) {
     </div>`).join("");
 }
 
-function renderWorkboard() {
-  const done = state.tasks.filter((task) => task.status === "Готово").length;
+function renderTgOrder() {
+  const total = state.cart.reduce((sum, item) => sum + item.price, 0);
   renderMetrics([
-    { label: "задачи", value: state.tasks.length },
-    { label: "готово", value: done },
-    { label: "в работе", value: state.tasks.filter((task) => task.status === "В работе").length },
-    { label: "фокус", value: "UI" }
+    { label: "позиции", value: state.menu.length },
+    { label: "в корзине", value: state.cart.length },
+    { label: "сумма", value: money(total) },
+    { label: "статусы", value: state.statuses.length }
   ]);
 
   root.innerHTML = `
     <section class="grid">
       <article class="panel">
-        <p class="eyebrow">доска задач</p>
-        <h2>Рабочая доска</h2>
-        <form class="form-grid" id="taskForm">
-          <label>Задача<input id="taskTitle" type="text" value="Проверить форму контакта"></label>
-          <label>Статус<select id="taskStatus"><option>План</option><option>В работе</option><option>Готово</option></select></label>
-          <button class="button primary" type="submit">Добавить</button>
-        </form>
-        <div class="list">${state.tasks.map((task, index) => `
+        <p class="eyebrow">бот заказов</p>
+        <h2>Меню и корзина</h2>
+        <div class="cards">${state.menu.map((item, index) => `
+          <button class="small-card" type="button" data-add-order="${index}">
+            <span>${money(item.price)}</span>
+            <strong>${item.name}</strong>
+            <p>Добавить в заявку</p>
+          </button>`).join("")}</div>
+        <div class="list">${state.cart.length ? state.cart.map((item, index) => `
           <div class="list-item">
-            <div><strong>${task.title}</strong><span>${task.status} · ${task.priority}</span></div>
-            <button type="button" data-done="${index}">Готово</button>
-          </div>`).join("")}</div>
+            <div><strong>${item.name}</strong><span>${money(item.price)} · заявка #${index + 1}</span></div>
+            <button type="button" data-remove-order="${index}">Убрать</button>
+          </div>`).join("") : `<div class="list-item"><div><strong>Корзина пустая</strong><span>Добавь услугу из меню выше.</span></div><span class="status-pill">new</span></div>`}</div>
       </article>
       <aside class="panel">
-        <p class="eyebrow">итог</p>
-        <h2>Что показывает проект</h2>
-        <p>Добавление задач, изменение статуса, счетчики и компактная доска без лишнего шума.</p>
+        <p class="eyebrow">как выглядит в Telegram</p>
+        <h2>Диалог</h2>
+        <div class="phone-frame">
+          <div class="phone-top"><span>Order Bot</span><span>online</span></div>
+          <div class="phone-message"><strong>Выберите услугу</strong><small>Лендинг, Telegram-бот, дизайн карточки.</small></div>
+          <div class="phone-message"><strong>Заявка: ${money(total)}</strong><small>${state.cart.length ? "Можно отправить менеджеру." : "Пока ничего не выбрано."}</small></div>
+        </div>
       </aside>
     </section>
   `;
 }
 
-function renderMoney() {
-  const spent = state.expenses.reduce((sum, item) => sum + item.amount, 0);
-  const left = state.budget - spent;
+function renderTgSupport() {
+  const ticket = state.tickets[state.activeTicket];
   renderMetrics([
-    { label: "бюджет", value: money(state.budget) },
-    { label: "расходы", value: money(spent) },
-    { label: "остаток", value: money(left) },
-    { label: "категории", value: new Set(state.expenses.map((item) => item.category)).size }
+    { label: "заявки", value: state.tickets.length },
+    { label: "активная", value: ticket.priority },
+    { label: "ответы", value: state.replies },
+    { label: "SLA", value: "14 мин" }
   ]);
 
   root.innerHTML = `
     <section class="grid">
       <article class="panel">
-        <p class="eyebrow">расходы</p>
-        <h2>Расходы месяца</h2>
-        <form class="form-grid" id="expenseForm">
-          <label>Название<input id="expenseName" type="text" value="Кофе"></label>
-          <label>Категория<input id="expenseCategory" type="text" value="Еда"></label>
-          <label>Сумма<input id="expenseAmount" type="number" value="450"></label>
-          <button class="button primary" type="submit">Добавить</button>
-        </form>
-        <div class="list">${state.expenses.map((item, index) => `
+        <p class="eyebrow">поддержка</p>
+        <h2>Очередь заявок</h2>
+        <div class="list">${state.tickets.map((item, index) => `
           <div class="list-item">
-            <div><strong>${item.name}</strong><span>${item.category} · ${money(item.amount)}</span></div>
-            <button type="button" data-expense="${index}">Удалить</button>
+            <div><strong>${item.name}</strong><span>${item.user} · ${item.priority} · ${item.status}</span></div>
+            <button type="button" data-ticket="${index}">${index === state.activeTicket ? "Открыта" : "Открыть"}</button>
           </div>`).join("")}</div>
       </article>
       <aside class="panel">
-        <p class="eyebrow">бюджет</p>
-        <h2>Бюджет</h2>
-        <div class="bars">
-          <div>
-            <div class="bar-label"><span>Потрачено</span><strong>${Math.round(spent / state.budget * 100)}%</strong></div>
-            <div class="track"><div class="fill" style="--value:${Math.min(100, Math.round(spent / state.budget * 100))}%"></div></div>
-          </div>
+        <p class="eyebrow">ответ оператору</p>
+        <h2>${ticket.name}</h2>
+        <div class="phone-frame">
+          <div class="phone-top"><span>${ticket.user}</span><span>${ticket.priority}</span></div>
+          <div class="phone-message"><strong>Сообщение клиента</strong><small>Нужно быстро понять проблему и дать аккуратный ответ.</small></div>
+          <div class="phone-message"><strong>Шаблон ответа</strong><small id="replyText">${state.templates[0]}</small></div>
         </div>
+        <div class="chips">${state.templates.map((template, index) => `<button type="button" data-template="${index}">Ответ ${index + 1}</button>`).join("")}</div>
       </aside>
     </section>
   `;
@@ -277,10 +290,10 @@ function renderMoney() {
 
 function render() {
   if (app === "kbju") renderKbju();
-  if (app === "vpn") renderVpn();
+  if (app === "fluxvpn") renderFluxvpn();
   if (app === "exclusive") renderExclusive();
-  if (app === "workboard") renderWorkboard();
-  if (app === "money") renderMoney();
+  if (app === "tgorder") renderTgOrder();
+  if (app === "tgsupport") renderTgSupport();
 }
 
 root.addEventListener("click", (event) => {
@@ -298,14 +311,14 @@ root.addEventListener("click", (event) => {
   }
 
   const server = event.target.closest("[data-server]");
-  if (server && app === "vpn") {
+  if (server && app === "fluxvpn") {
     state.server = server.dataset.server;
     showToast(`Сервер: ${state.server}`);
     render();
   }
 
-  const toggle = event.target.closest("[data-toggle-vpn]");
-  if (toggle && app === "vpn") {
+  const toggle = event.target.closest("[data-toggle-flux]");
+  if (toggle && app === "fluxvpn") {
     state.active = !state.active;
     render();
   }
@@ -316,36 +329,36 @@ root.addEventListener("click", (event) => {
     document.querySelector("#partnerList").innerHTML = partnerCards(list);
   }
 
-  const done = event.target.closest("[data-done]");
-  if (done && app === "workboard") {
-    state.tasks[Number(done.dataset.done)].status = "Готово";
+  const addOrder = event.target.closest("[data-add-order]");
+  if (addOrder && app === "tgorder") {
+    state.cart.push(state.menu[Number(addOrder.dataset.addOrder)]);
+    showToast("Добавлено в заявку");
     render();
   }
 
-  const expense = event.target.closest("[data-expense]");
-  if (expense && app === "money") {
-    state.expenses.splice(Number(expense.dataset.expense), 1);
+  const removeOrder = event.target.closest("[data-remove-order]");
+  if (removeOrder && app === "tgorder") {
+    state.cart.splice(Number(removeOrder.dataset.removeOrder), 1);
     render();
   }
-});
 
-root.addEventListener("submit", (event) => {
-  event.preventDefault();
-  if (app === "workboard") {
-    state.tasks.push({
-      title: document.querySelector("#taskTitle").value,
-      status: document.querySelector("#taskStatus").value,
-      priority: "средний"
-    });
+  const ticket = event.target.closest("[data-ticket]");
+  if (ticket && app === "tgsupport") {
+    state.activeTicket = Number(ticket.dataset.ticket);
     render();
   }
-  if (app === "money") {
-    state.expenses.push({
-      name: document.querySelector("#expenseName").value,
-      category: document.querySelector("#expenseCategory").value,
-      amount: Number(document.querySelector("#expenseAmount").value)
-    });
-    render();
+
+  const template = event.target.closest("[data-template]");
+  if (template && app === "tgsupport") {
+    state.replies += 1;
+    document.querySelector("#replyText").textContent = state.templates[Number(template.dataset.template)];
+    showToast("Шаблон выбран");
+    renderMetrics([
+      { label: "заявки", value: state.tickets.length },
+      { label: "активная", value: state.tickets[state.activeTicket].priority },
+      { label: "ответы", value: state.replies },
+      { label: "SLA", value: "14 мин" }
+    ]);
   }
 });
 

@@ -35,7 +35,7 @@ document.querySelector("#copyLink").addEventListener("click", async () => {
   }
 });
 
-document.querySelectorAll(".project-card").forEach((card) => {
+document.querySelectorAll(".case-item").forEach((card) => {
   card.addEventListener("click", (event) => {
     if (event.target.closest("a")) return;
     const link = card.querySelector("a");

@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Андрей Swatik11 — frontend портфолио</title>
-    <meta name="description" content="Портфолио Андрея Swatik11: пять рабочих frontend-проектов, КБЖУ, VPN, Exclusive Partners, WorkBoard и Money Map.">
+    <title>Андрей Swatik11 - портфолио frontend и Telegram-ботов</title>
+    <meta name="description" content="Портфолио Андрея Swatik11: FluxVpn, КБЖУ, Exclusive Partners и Telegram-боты с рабочими интерфейсами.">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
-    <div class="ambient" aria-hidden="true"></div>
+    <div class="page-noise" aria-hidden="true"></div>
 
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Наверх">
@@ -29,121 +29,139 @@
 
     <main id="top">
       <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">фронтенд / интерфейсы / портфолио</p>
-          <h1>Я Андрей, Swatik11. Делаю аккуратные frontend-интерфейсы для реальных задач.</h1>
-          <p class="hero-text">В портфолио пять рабочих мини-приложений: КБЖУ, VPN, Exclusive Partners, доска задач и трекер расходов. Каждый проект можно открыть, нажать кнопки, проверить форму, фильтр или расчет и понять, как я думаю про интерфейс.</p>
+        <div class="hero-content">
+          <p class="eyebrow">frontend / telegram bots / web ui</p>
+          <h1>Я Андрей. Делаю понятные сайты, кабинеты и Telegram-ботов под реальные задачи.</h1>
+          <p class="hero-text">Я не хочу показывать случайные демки. Ниже - проекты, которые ближе к тому, что я реально могу собрать: FluxVpn, КБЖУ, Exclusive Partners и два Telegram-бота с красивой подачей, логикой и рабочими действиями.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#projects">Смотреть проекты</a>
+            <a class="button primary" href="#projects">Смотреть кейсы</a>
             <a class="button ghost" href="https://t.me/Swatik11" target="_blank" rel="noreferrer">Написать в Telegram</a>
           </div>
-          <div class="hero-stats" aria-label="Кратко">
-            <div><span>кейсы</span><strong>5</strong></div>
-            <div><span>формат</span><strong>HTML CSS JS</strong></div>
-            <div><span>деплой</span><strong>GitHub + VPS</strong></div>
-          </div>
         </div>
 
-        <div class="hero-visual" aria-label="Превью портфолио">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Рабочий стол с ноутбуком и кодом">
-          <div class="preview-card">
-            <span>фокус</span>
-            <strong>рабочие экраны без лишней воды</strong>
-            <p>калькуляторы, CRM, личные кабинеты, списки, прогресс, фильтры и понятные состояния</p>
+        <div class="hero-media">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80" alt="Рабочий стол с интерфейсом на ноутбуке">
+          <div class="hero-note">
+            <span>сейчас в фокусе</span>
+            <strong>боты, личные кабинеты и аккуратные интерфейсы</strong>
           </div>
         </div>
       </section>
 
-      <section class="section-heading" id="projects">
+      <section class="intro-row" aria-label="Кратко">
+        <div><span>проектов</span><strong>5</strong></div>
+        <div><span>основа</span><strong>HTML CSS JS</strong></div>
+        <div><span>публикация</span><strong>GitHub + VPS</strong></div>
+        <div><span>связь</span><strong>@Swatik11</strong></div>
+      </section>
+
+      <section class="section-title" id="projects">
         <p class="eyebrow">проекты</p>
-        <h2>Пять проектов, которые удобно смотреть и проверять.</h2>
-        <p>Я сделал витрину не как набор случайных карточек, а как маленькую продуктовую систему: у каждого проекта есть сценарий, действия, данные, адаптив и понятный результат после клика.</p>
+        <h2>Кейсы с фото, сценарием и рабочим поведением.</h2>
+        <p>Я сделал витрину более честной: не просто блоки с текстом, а проекты с визуальным превью, понятной задачей и кликабельной страницей внутри.</p>
       </section>
 
-      <section class="project-board" aria-label="Проекты портфолио">
-        <article class="project-card featured" data-project="kbju" tabindex="0">
-          <div class="project-media">
-            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=900&q=80" alt="Полезная еда для КБЖУ проекта">
+      <section class="case-list" aria-label="Проекты портфолио">
+        <article class="case-item accent-green" tabindex="0">
+          <a class="case-link" href="./projects/01-kbju-coach/index.html" aria-label="Открыть проект КБЖУ Bot"></a>
+          <div class="case-photo">
+            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1000&q=80" alt="Полезная еда и рацион">
           </div>
-          <div>
-            <span class="number">01</span>
-            <h3>КБЖУ Coach</h3>
-            <p>Дневник питания с расчетом цели, макросами, быстрыми пресетами продуктов и прогрессом по калориям.</p>
-            <div class="tags"><span>здоровье</span><span>калькулятор</span><span>память</span></div>
-            <a class="card-link" href="./projects/01-kbju-coach/index.html">Открыть проект</a>
-          </div>
-        </article>
-
-        <article class="project-card" data-project="vpn" tabindex="0">
-          <div>
-            <span class="number">02</span>
-            <h3>VPN Guard</h3>
-            <p>Личный кабинет VPN-сервиса: подключение, выбор страны, ping, скорость и список активных устройств.</p>
-            <div class="tags"><span>кабинет</span><span>безопасность</span><span>состояния</span></div>
-            <a class="card-link" href="./projects/02-vpn-guard/index.html">Открыть проект</a>
+          <div class="case-copy">
+            <span class="case-number">01</span>
+            <h3>КБЖУ Bot</h3>
+            <p>Telegram-бот и мини-интерфейс для питания: расчет нормы, приемы пищи, быстрые продукты и прогресс по калориям.</p>
+            <div class="tags"><span>Telegram bot</span><span>КБЖУ</span><span>расчеты</span></div>
+            <span class="open-label">Открыть проект</span>
           </div>
         </article>
 
-        <article class="project-card" data-project="exclusive" tabindex="0">
-          <div>
-            <span class="number">03</span>
+        <article class="case-item accent-blue" tabindex="0">
+          <a class="case-link" href="./projects/02-fluxvpn/index.html" aria-label="Открыть проект FluxVpn"></a>
+          <div class="case-photo">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80" alt="Серверная стойка для VPN-сервиса">
+          </div>
+          <div class="case-copy">
+            <span class="case-number">02</span>
+            <h3>FluxVpn</h3>
+            <p>Личный кабинет VPN-сервиса: подключение, выбор сервера, тариф, устройства, скорость и статус защиты.</p>
+            <div class="tags"><span>VPN</span><span>кабинет</span><span>состояния</span></div>
+            <span class="open-label">Открыть проект</span>
+          </div>
+        </article>
+
+        <article class="case-item accent-gold" tabindex="0">
+          <a class="case-link" href="./projects/03-exclusive-partners/index.html" aria-label="Открыть проект Exclusive Partners"></a>
+          <div class="case-photo">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80" alt="Партнерская встреча">
+          </div>
+          <div class="case-copy">
+            <span class="case-number">03</span>
             <h3>Exclusive Partners</h3>
-            <p>Партнерская CRM-панель: уровни клиентов, статусы, фильтры, карточки и быстрый расчет комиссии.</p>
+            <p>Партнерская CRM: статусы клиентов, уровни, фильтры, воронка и расчет комиссии без перегруженного интерфейса.</p>
             <div class="tags"><span>CRM</span><span>партнеры</span><span>фильтры</span></div>
-            <a class="card-link" href="./projects/03-exclusive-partners/index.html">Открыть проект</a>
+            <span class="open-label">Открыть проект</span>
           </div>
         </article>
 
-        <article class="project-card" data-project="workboard" tabindex="0">
-          <div>
-            <span class="number">04</span>
-            <h3>WorkBoard</h3>
-            <p>Мини-доска для личных задач: добавление, статусы, приоритеты и быстрые счетчики по работе.</p>
-            <div class="tags"><span>доска</span><span>задачи</span><span>фокус</span></div>
-            <a class="card-link" href="./projects/04-workboard/index.html">Открыть проект</a>
+        <article class="case-item accent-violet" tabindex="0">
+          <a class="case-link" href="./projects/04-telegram-order-bot/index.html" aria-label="Открыть проект Telegram Order Bot"></a>
+          <div class="case-photo">
+            <img src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=1000&q=80" alt="Телефон с мобильным интерфейсом">
+          </div>
+          <div class="case-copy">
+            <span class="case-number">04</span>
+            <h3>Telegram Order Bot</h3>
+            <p>Красивый бот для заказов: меню, корзина, статусы заявки, быстрые кнопки и аккуратная логика диалога.</p>
+            <div class="tags"><span>бот</span><span>заказы</span><span>меню</span></div>
+            <span class="open-label">Открыть проект</span>
           </div>
         </article>
 
-        <article class="project-card" data-project="money" tabindex="0">
-          <div>
-            <span class="number">05</span>
-            <h3>Money Map</h3>
-            <p>Трекер личного бюджета: расходы, категории, прогресс месяца и понятный остаток после операций.</p>
-            <div class="tags"><span>финансы</span><span>прогресс</span><span>формы</span></div>
-            <a class="card-link" href="./projects/05-money-map/index.html">Открыть проект</a>
+        <article class="case-item accent-cyan" tabindex="0">
+          <a class="case-link" href="./projects/05-telegram-support-bot/index.html" aria-label="Открыть проект Telegram Support Bot"></a>
+          <div class="case-photo">
+            <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&w=1000&q=80" alt="Поддержка клиентов и рабочий ноутбук">
+          </div>
+          <div class="case-copy">
+            <span class="case-number">05</span>
+            <h3>Telegram Support Bot</h3>
+            <p>Бот поддержки: заявки, приоритеты, шаблоны ответов, SLA и понятная панель для обработки сообщений.</p>
+            <div class="tags"><span>бот</span><span>поддержка</span><span>SLA</span></div>
+            <span class="open-label">Открыть проект</span>
           </div>
         </article>
       </section>
 
       <section class="skills-section" id="skills">
-        <div class="section-heading compact">
+        <div class="section-title compact">
           <p class="eyebrow">навыки</p>
-          <h2>Что я реально показываю в этих проектах.</h2>
+          <h2>Что я показываю без лишнего пафоса.</h2>
         </div>
-        <div class="skills-grid">
-          <article><span>01</span><h3>HTML и CSS</h3><p>Семантика, сетки, адаптив, формы, состояния наведения, фокуса и аккуратная типографика.</p></article>
-          <article><span>02</span><h3>JavaScript для UI</h3><p>Расчеты, фильтры, переключатели, списки, обновление данных на странице и сохранение состояния.</p></article>
-          <article><span>03</span><h3>Интерфейсная логика</h3><p>Думаю не только про внешний вид, но и про путь пользователя: что нажать, что изменилось, где результат.</p></article>
-          <article><span>04</span><h3>Публикация проекта</h3><p>Git, GitHub Pages, VPS, базовый Nginx и проверка сайта после загрузки на сервер.</p></article>
+        <div class="skill-lines">
+          <div><span>01</span><strong>Верстка и адаптив</strong><p>Собираю страницы, карточки, формы и кабинеты так, чтобы они нормально смотрелись на телефоне и компьютере.</p></div>
+          <div><span>02</span><strong>JavaScript-логика</strong><p>Делаю фильтры, калькуляторы, переключатели, списки, статусы, добавление элементов и простую работу с данными.</p></div>
+          <div><span>03</span><strong>Telegram-боты</strong><p>Продумываю сценарии диалога, быстрые кнопки, заявки, уведомления и интерфейсы вокруг бота.</p></div>
+          <div><span>04</span><strong>Деплой</strong><p>Публикую проект на GitHub Pages и VPS, проверяю ссылки, мобильный вид и базовые ошибки после загрузки.</p></div>
         </div>
       </section>
 
-      <section class="about-section" id="about">
+      <section class="profile-band" id="about">
         <div>
           <p class="eyebrow">обо мне</p>
-          <h2>Я развиваюсь во frontend и собираю проекты так, чтобы их было не стыдно открыть.</h2>
+          <h2>Я не рисую “красивую картинку” отдельно от задачи.</h2>
         </div>
         <div>
-          <p>Мне нравится делать страницы, где сразу понятно, что происходит: есть нормальная структура, рабочие кнопки, формы, фильтры, адаптив и аккуратная реакция на действия. Я не завышаю опыт, но стараюсь доводить даже небольшие проекты до законченного вида.</p>
-          <p>Когда беру задачу, сначала разбираю сценарий, потом собираю интерфейс, проверяю мобильный вид, клики и состояния. Это портфолио показывает именно такой подход: меньше обещаний, больше проверяемых экранов.</p>
+          <p>Мне интересны проекты, где интерфейс помогает человеку быстро сделать действие: оформить заказ, написать в бот, посмотреть статус, выбрать сервер, посчитать норму или разобраться с заявкой.</p>
+          <p>Я еще развиваюсь, но уже стараюсь делать работу аккуратно: сначала сценарий, потом структура, визуал, клики, адаптив и публикация. Поэтому в портфолио оставлены проекты, которые можно открыть и проверить.</p>
         </div>
       </section>
 
-      <section class="contact-section" id="contact">
+      <section class="contact-strip" id="contact">
         <div>
           <p class="eyebrow">контакты</p>
-          <h2>Связаться со мной.</h2>
-          <p>Лучше всего писать в Telegram. Ссылка ниже открывает личные сообщения, а кнопка рядом копирует короткий адрес портфолио.</p>
+          <h2>Написать мне</h2>
+          <p>Самый быстрый способ - Telegram. Кнопка рядом копирует публичную ссылку на портфолио.</p>
         </div>
         <div class="contact-actions">
           <a class="button primary" href="https://t.me/Swatik11" target="_blank" rel="noreferrer">Telegram @Swatik11</a>
@@ -154,7 +172,7 @@
 
     <footer class="footer">
       <strong>Swatik11 / Андрей</strong>
-      <span>5 рабочих проектов: КБЖУ, VPN, Exclusive Partners, WorkBoard и Money Map</span>
+      <span>FluxVpn, КБЖУ, Exclusive Partners и Telegram-боты</span>
     </footer>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
